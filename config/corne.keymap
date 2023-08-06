@@ -47,24 +47,24 @@
 // | SHFT |    |    |  *  |     |  = |          |  7 |  8  | 9  |  {  |  }  | RSHFT |
 //                 | GUI |     | ALT/ENT |   | HYPER/SPACE | BKSP |  0  |
                         bindings = <
-   &kp TILDE    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                             &kp N1  &kp N2  &kp N3       &kp LPAR &kp RPAR &kp BSLH
+   &kp TILDE    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                             &kp N1  &kp N2  &kp N3      &kp LPAR &kp RPAR &kp BSLH
    &kp AMPS   &kp KP_MULTIPLY   &kp UNDER  &kp PLUS  &kp MINUS &trans                   &kp N4  &kp N5 &kp N6       &kp LBKT &kp RBKT &kp PIPE
-   &kp LSHFT  &trans   &trans  &kp KP_MULTIPLY    &trans  &kp EQUAL                         &kp N7  &kp N8  &kp N9       &kp LBRC &kp RBRC &kp RSHFT
-                         &kp LGUI &trans  &tp LALT RET                                &tp LC(LS(LA(LGUI))) SPACE &kp BSPC  &kp N0
+   &kp LSHFT  &trans   &trans  &kp KP_MULTIPLY    &trans  &kp EQUAL                     &kp N7  &kp N8  &kp N9      &kp LBRC &kp RBRC &kp RSHFT
+                         &kp LGUI &trans  &tp LALT RET                                  &tp LC(LS(LA(LGUI))) SPACE &kp BSPC  &kp N0
                         >;
                 };
 
                 layer_above {
 // -----------------------------------------------------------------------------------------
-// |  BTCLR |  F1  |  F2  |  F3  |  F4  |  F5 |                                  |  F6  |    F7  |  F8  | F9  |  F10  |  | 
-// |  RGB tog |  BT1  | BT2 |BT3  | BT4 | BT5 |                                   |   BL_INC | UP |  LFT |  RGT |     |     |
+// |  BTCLR |  F1  |  F2  |  F3  |  F4  |  F5 |                                           |  F6  |    F7  |  F8  | F9  |  F10  |  | 
+// |  RGB tog |  BT1  | BT2 |BT3  | BT4 | BT5 |                                           |   BL_INC | UP |  LFT |  RGT |     |     |
 // |   rgbHUI  |   rgbHUD  |   rgbSAI  | rgbSAD |  rgbBRI   |   rgbDRD  |                 |   BL_DEC |  DWN  |  Prev  |  Next  |  Vol -  |  Vol +   |
-//                    |   rgbSPI  |    |  rgbSPD |                           |   BL_TOG  |   Play/Pause    |     |
+//                    |   rgbSPI  |    |  rgbSPD |                                        |   BL_TOG  |   Play/Pause    |     |
                         bindings = <
    &bt BT_CLR    &kp F1        &kp F2       &kp F3       &kp F4       &kp F5                                   &kp F6   &kp F7   &kp F8  &kp F9  &kp F10   &trans
    &rgb_ug RGB_TOG   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                     &bl BL_INC   &kp UP   &kp LEFT  &kp RIGHT  &trans  &trans
    &rgb_ug RGB_HUI &rgb_ug RGB_HUD  &rgb_ug RGB_SAI &rgb_ug RGB_SAD  &rgb_ug RGB_BR  &rgb_ug  RGB_BRD             &bl BL_DEC &kp DOWN  &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP
-                           &rgb_ug RGB_SPI  &trans &rgb_ug RGB_SPD                                         &bl BL_TOG   &kp C_PP    &trans
+                           &rgb_ug RGB_SPI  &trans &rgb_ug RGB_SPD                                                 &bl BL_TOG   &kp C_PP    &trans
                         >;        
                 };
         };
