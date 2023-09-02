@@ -17,14 +17,12 @@ The Mod-Tap behavior sends a different keypress, depending on whether it's held 
 ============================================================================
 
 Macro
-questions:zmk- to open a favorite tab
-1. is there a way to open a specific website, by just pressing a key?
-Option 1:
-Create a macro which types something like Win+R, the URL, Enter
+to open a favorite tab
+
+Option 1: Create a macro which types something like Win+R, the URL, Enter
 
 
-Option 2;
-Bind the key to something you don't normally use, like an F13-24 key. Set up AutoHotkey or a similar program to listen for that key and run a script.
+Option 2: Bind the key to something you don't normally use, like an F13-24 key. Set up AutoHotkey or a similar program to listen for that key and run a script.
 
 ============================================================================
 
