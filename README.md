@@ -9,6 +9,7 @@ The Mod-Tap behavior sends a different keypress, depending on whether it's held 
 ⦁	If you press another key within the 200ms, the 'mod' behavior is also activated
 
 (&mt )
+
 (&mt B A) 
 
 ⦁	if the key is pressed momentary, B will be the output
