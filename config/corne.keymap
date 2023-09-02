@@ -45,7 +45,7 @@
 // |  ~   |  !   |    @    |  #  |  $  |  %     |            | 1  |  2  |  3 | (   |  )  |   \   |
 // |  &   |  *   |    _    |  +  |  -  |        |            | 4  |  5  | 6  |   [ |  ]  |  "|"  |  
 // | SHFT |PSCRN |ALT_ERASE|  *  |     |  =     |            |  7 |  8  | 9  |  {  |  }  | RSHFT |
-//                        | GUI |     | ALT/ENT |            | HYPER/SPACE | BKSP |  0  |
+//                         | GUI |     | ALT/ENT |            | HYPER/SPACE | BKSP |  0  |
                         bindings = <
    &kp TILDE  &kp EXCL          &kp AT     &kp HASH           &kp DLLR  &kp PRCNT                &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
    &kp AMPS   &kp KP_MULTIPLY   &kp UNDER  &kp PLUS           &kp MINUS &trans                   &kp N4 &kp N5 &kp N6 &kp LBKT &kp RBKT &kp PIPE
