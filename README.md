@@ -1,4 +1,5 @@
 # zmk-config2
+https://zmk.dev/docs/features/keymaps
 ============================================================================
 ZMK- Mod_Tap
 Mod-Tap Behavior
