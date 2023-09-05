@@ -1,5 +1,6 @@
 # zmk-config2
 https://zmk.dev/docs/features/keymaps
+https://zmk.dev/docs/troubleshooting#split-keyboard-halves-unable-to-pair
 ============================================================================
 ZMK- Mod_Tap
 Mod-Tap Behavior
