@@ -74,5 +74,22 @@
 
                         >;        
                 };
+game_layer_2 {
+            // -----------------------------------------------------------------------------------------
+            // |    |  5  |  1  |     |  2  |  4  |   |     |     |     |     |     |     |
+            // |    |     |     |     |     |  G  |   |     |     |     |     |     |     |
+            // |    |     |     |     |  6  |     |   |     |     |     |     |     |     |
+            //                  |     |     | SPC |   |     |     |     |
+
+            label = "game2";
+
+            // helper layer for numrow etc.
+
+            bindings = <
+&kp N6  &kp N5  &kp N1  &trans  &kp N2  &kp N4    &none  &none  &none  &none  &none  &none
+&kp F1  &trans  &trans  &trans  &trans   &kp G    &none  &none  &none  &none  &none  &none
+ &none   &none   &none   &none   &kp C   &kp V    &none  &none  &none  &none  &none  &none
+                        &trans  &trans   &none    &none  &none  &none
+            >;
         };
 };
