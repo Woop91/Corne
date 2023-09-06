@@ -69,7 +69,7 @@
    &bt BT_CLR         &kp F1           &kp F2          &kp F3           &kp F4           &kp F5                               &kp F6     &kp F7   &kp F8     &kp F9     &kp F10       &kp F11
    &rgb_ug RGB_TOG	  &bt BT_SEL 1     &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_SEL 5                         &kp PG_UP  &kp UP   &kp LEFT   &kp RIGHT  &trans        &kp F12
    &ext_power EP_TOG  &kp C_AL_DOCS    &kp C_AL_FILES  &kp C_AL_WWW     &kp C_AC_BACK    &kp C_AC_FORWARD                     &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
-    kp C_AC_DESKTOP_SHOW_ALL_WINDOWS   &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &kp K_APP                                      &kp C_AL_WORD  &kp C_PP &trans 
+                                                                                &trans   &trans  &kp K_APP                                      &kp C_AL_WORD  &kp C_PP &trans 
                         >;        
                 };
         };
