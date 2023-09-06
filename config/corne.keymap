@@ -63,13 +63,13 @@
 // -----------------------------------------------------------------------------------------
 // |  BTCLR   |  F1     |  F2      |  F3     |  F4      |  F5     |                   |  F6     |  F7  |  F8  |  F9  |  F10   |   F11  | 
 // | RGB TOG  |  BT1    |  BT2     |  BT3    |  BT4     |  BT5    |                   |  PG_up  |  UP  |  LFT |  RGT |        |   F12  |
-// |Ext pwr   |extpwroff|extpwron  |  APP    |  lEFT    |  rIGHT  |                   |  PG_dwn |  DWN |  Prev|  Next|  Vol - |  Vol + |
-//                                 |         |          |         |                   |         |  Play/Pause    |        |
+// |Ext pwr   |extpwroff|extpwron  |  APP    |    c ac forward  | k forward   |       |  PG_dwn |  DWN |  Prev|  Next|  Vol - |  Vol + |
+//                                 |  Menu   |   trans     |  media www       |       |     bokmarks    |  Play/Pause    |    Mute    |
                         bindings = <
    &bt BT_CLR  &kp F1        &kp F2          &kp F3           &kp F4           &kp F5                             &kp F6     &kp F7   &kp F8     &kp F9     &kp F10       &kp F11
    &rgb_ug RGB_TOG	  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4             &kp PG_UP  &kp UP   &kp LEFT   &kp RIGHT  &trans        &kp F12
-   &ext_power EP_TOG  &ext_power EP_OFF &ext_power EP_ON &kp K_APP &kp LEFT &kp RIGHT                             &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
-                                                      &trans  &trans   &trans                                     &trans &kp C_PP &trans
+   &ext_power EP_TOG  &ext_power EP_OFF &ext_power EP_ON &kp K_APP &kp C_AC_FORWARD &kp K_FORWARD                            &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
+                                                      &kp C_MENU  &trans  &kp C_MEDIA_WWW                                        &kp C_AC_BOOKMARKS &kp C_PP &kp K_MUTE
                         >;        
                 };
         };
