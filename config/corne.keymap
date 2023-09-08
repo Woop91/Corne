@@ -47,7 +47,7 @@
 // -----------------------------------------------------------------------------------------
 // |  ~   |  !   |  @  |  #  |  $  |  %  |            |  1  |  2  |  3 | (   |  )  |   \   |
 // |  &   |  *   |  _  |  +  |  -  |     |            |  4  |  5  | 6  |   [ |  ]  |  "|"  |  
-// | HOME |PSCRN |     |  *  |     |  =  |            |  7  |  8  | 9  |  {  |  }  |       |
+// | HOME |PSCRN | END |  *  |     |  =  |            |  7  |  8  | 9  |  {  |  }  |       |
 //                     | RSE | GUI | ENT |            | SPC | BKSP|  0 |
                         bindings = <
    &kp TILDE  &kp EXCL          &kp AT      &kp HASH          &kp DLLR   &kp PRCNT            &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
