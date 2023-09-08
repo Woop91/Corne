@@ -34,12 +34,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |    B    |   |  J  |  L   |  U  |  Y  |  ;  | ESC |
 // | SHFT |  A  |  R  |  S  |  T  |    G    |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // | CTRL |  Z  |  X  |  C  |  D  |    V    |   |  K  |  H   |  ,  |  .  |  /  | ALT |
-//                    | RSE | GUI | ALT/ENT |   | SPC | BKSP | LWR |
+//                    |  GUI| RSE | ALT/ENT |   | SPC | BKSP | LWR |
                         bindings = <
    &kp TAB    &kp Q &kp W &kp F    &kp P &kp B             &kp J &kp L  &kp U     &kp Y   &kp SEMI  &kp ESC
    &kp LSHFT  &kp A &kp R &kp S    &kp T &kp G             &kp M &kp N  &kp E     &kp I   &kp O     &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C    &kp D &kp V             &kp K &kp H  &kp COMMA &kp DOT &kp FSLH  &kp RALT 
-                          &kp LGUI &mo 1 &tp LALT RET      &kp SPACE    &kp BSPC  &mo 2
+                  &mo 1 &kp LGUI  &tp LALT RET             &kp SPACE    &kp BSPC  &mo 2
                         >;
                 };
 
