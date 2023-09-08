@@ -34,7 +34,7 @@
 // | TAB  |  Q  |  W  |  F  |  P  |    B    |   |  J  |  L   |  U  |  Y  |  ;  | ESC |
 // | SHFT |  A  |  R  |  S  |  T  |    G    |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // | CTRL |  Z  |  X  |  C  |  D  |    V    |   |  K  |  H   |  ,  |  .  |  /  | ALT |
-//                    | GUI | RSE | ALT/ENT |   | HYPER/SPC | BKSP  | LWR |
+//                    | RSE | GUI | ALT/ENT |   | HYPER/SPC | BKSP  | LWR |
                         bindings = <
    &kp TAB    &kp Q &kp W &kp F    &kp P &kp B             &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp ESC
    &kp LSHFT  &kp A &kp R &kp S    &kp T &kp G             &kp M &kp N  &kp E     &kp I   &kp O &tp LC(LS(LALT)) SQT
@@ -61,13 +61,13 @@
 // -----------------------------------------------------------------------------------------
 // |    |  F1     |  F2      |  F3     |  F4    |  F5     |                   |  F6     |  F7  |  F8  |  F9  |  F10   |   F11  | 
 // |    |  BT0    |  BT1     |  BT2    |  BT3   |  BT4    |                   |  PG_up  |  UP  |  LFT |  RGT |        |   F12  |
-// |    |         |          |         |  bck   |  FWD    |                   |  PG_dwn |  DWN |  Prev|  Next|  Vol - |  Vol + |
-//                           |  BT_CLR |         | rclick |                   |         |  Play/Pause  |        |
+// |    |  BT_CLR |          |         |  bck   |  FWD    |                   |  PG_dwn |  DWN |  Prev|  Next|  Vol - |  Vol + |
+//                           |         |         | rclick |                   |         |  Play/Pause  |        |
                         bindings = <
    &trans     &kp F1           &kp F2          &kp F3           &kp F4           &kp F5                        &kp F6     &kp F7   &kp F8     &kp F9     &kp F10       &kp F11
-   &trans     &bt BT_SEL 1     &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_SEL 5                  &kp PG_UP  &kp UP   &kp LEFT   &kp RIGHT  &trans        &kp F12
-   &trans     &trans           &trans          &trans           &kp C_AC_BACK    &kp C_AC_FORWARD              &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
-                                               &bt BT_CLR       &trans           &kp K_APP                     &trans     &kp C_PP &trans 
+   &trans     &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                  &kp PG_UP  &kp UP   &kp LEFT   &kp RIGHT  &trans        &kp F12
+   &trans     &bt BT_CLR       &trans          &trans           &kp C_AC_BACK    &kp C_AC_FORWARD              &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
+                                               &trans           &trans           &kp K_APP                     &trans     &kp C_PP &trans 
                         >;        
                 };
         };
