@@ -39,7 +39,7 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp B             &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp ESC
    &kp LCTRL &kp A &kp R &kp S &kp T &kp G             &kp M &kp N  &kp E     &kp I   &kp O &tp LC(LS(LALT)) SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V             &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RALT 
-                 &kp LGUI &mo 1 &tp LALT RET             &tp LC(LS(LA(LGUI))) &kp BSPC &mo 2
+                 &kp LGUI &mo 1 &tp LALT RET             &tp LC(LS(LA(LGUI))) SPACE &kp BSPC &mo 2
                         >;
                 };
 
@@ -53,7 +53,8 @@
     &kp TILDE    &kp EXCL          &kp AT     &kp HASH           &kp DLLR   &kp PRCNT            &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
    &kp AMPS     &kp KP_MULTIPLY   &kp UNDER  &kp PLUS           &kp MINUS  &trans               &kp N4 &kp N5 &kp N6 &kp LBKT &kp RBKT &kp PIPE
    &kp LSHFT    &trans            &trans     &kp KP_MULTIPLY    &trans     &kp EQUAL            &kp N7 &kp N8 &kp N9 &kp LBRC &kp RBRC &trans 
-                                               &kp LGUI           &trans     &tp LALT RET               &kp SPACE &kp BSPC  &kp N0
+                                               &kp LGUI           &trans     &tp LALT RET               &tp LC(LS(LA(LGUI))) SPACE &kp BSPC  &kp N0
+
                         >;
                 };
 
@@ -67,7 +68,7 @@
    &trans        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                        &kp F6     &kp F7   &kp F8     &kp F9     &kp F10       &kp F11
    &trans     &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                  &kp PG_UP  &kp UP   &kp LEFT   &kp RIGHT  &trans        &kp F12
    &trans        &trans         &trans         &trans        &trans        &trans              &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
-                                                &trans        &trans        &trans                    &trans     &kp C_PP &trans 
+                                                &trans        &trans        &trans                    &trans   &kp C_PP  &trans 
                         >;        
                 };
         };
