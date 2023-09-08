@@ -61,15 +61,15 @@
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// | BT_CLR |  F1    |  F2    |  F3    |  F4    |  F5     |                  |        |         |   Vol + |     | BRI_UP   | ESC |
-// | RGB_TOG|  F6    |  F7    |  F8    |  F9    |  F10    |                  |  Prev  |  Next   |   Vol - |     | BRI_AUTO |     |
-// | BL_TOG |  BT_1  |  BT_ 2 |  BT_3  |  BT_4  |  BT_5   |                  |   RW   |  FF     |   MUTE  |     | C_BRI_DN |     |
-//                            |  F11   |  F12   |         |                  |        |  PP     |         | 
+// | TAB | PG_up   |       | BWRSR BCK |  UP       |  BWRSR FWD  |               |        |         |   Vol + |     | BRI_UP   | ESC |
+// | TAB | PG_dwn  | UP    |  LFT      |  DWN      |     RGT     |               |  Prev  |  Next   |   Vol - |     | BRI_AUTO |     |
+// | TAB |         | DWN   |           |           |             |               |   RW   |  FF     |   MUTE  |     | C_BRI_DN |     |
+//                         |   PSCRN   |   ENT     |   rclick    |               |        |  PP     |         | 
                         bindings = <
-   &bt BT_CLR          &kp F1         &kp F2          &kp F3         &kp F4         &kp F5                &trans       &trans        &kp C_VOL_UP  &trans    &kp C_BRI_UP    &kp ESC             
-   &rgb_ug RGB_TOG     &kp F6         &kp F7          &kp F8         &kp F9         &kp F10               &kp C_PREV   &kp C_NEXT    &kp C_VOL_DN  &trans    &kp C_BRI_AUTO  &trans                                          
-   &rgb_ug BL_TOG      &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4          &kp C_RW     &kp C_FF      &kp C_MUTE    &trans    &kp C_BRI_DN    &trans      
-                                                      &kp F11        &kp F12        &trans                &trans       &kp C_PP      &trans      
+   &trans   &kp PG_UP     &trans     &kp C_AC_BACK      &kp UP       &kp C_AC_FORWARD                 &trans       &trans        &kp C_VOL_UP  &trans    &kp C_BRI_UP    &kp ESC             
+   &trans   &kp PG_DN     &kp UP     &kp LEFT           &kp DOWN     &kp RIGHT                        &kp C_PREV   &kp C_NEXT    &kp C_VOL_DN  &trans    &kp C_BRI_AUTO  &trans                                          
+   &trans   &trans        &kp DOWN   &trans             &trans       &trans                           &kp C_RW     &kp C_FF      &kp C_MUTE    &trans    &kp C_BRI_DN    &trans      
+                                     &kp PRINTSCREEN    &kp K_APP    &kp RET                          &trans       &kp C_PP      &trans      
                         >;        
                 };
         };
