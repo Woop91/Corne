@@ -47,13 +47,13 @@
 // -----------------------------------------------------------------------------------------
 // |  ~   |  !   |  @  |  #  |  $  |  %  |            |  1  |  2  |  3 | (   |  )  |   \   |
 // |  &   |  *   |  _  |  +  |  -  |     |            |  4  |  5  | 6  |   [ |  ]  |  "|"  |  
-// |      |PSCRN |     |  *  |     |  =  |            |  7  |  8  | 9  |  {  |  }  |       |
+// | HOME |PSCRN |     |  *  |     |  =  |            |  7  |  8  | 9  |  {  |  }  |       |
 //                     | RSE | GUI | ENT |            | SPC | BKSP|  0 |
                         bindings = <
-   &kp TILDE  &kp EXCL          &kp AT         &kp HASH           &kp DLLR   &kp PRCNT            &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
-   &kp AMPS   &kp KP_MULTIPLY   &kp UNDER      &kp PLUS           &kp MINUS  &trans               &kp N4 &kp N5 &kp N6 &kp LBKT &kp RBKT &kp PIPE
-   &trans     &kp PRINTSCREEN   &kp ALT_ERASE  &kp KP_MULTIPLY    &trans     &kp EQUAL            &kp N7 &kp N8 &kp N9 &kp LBRC &kp RBRC &trans 
-                                               &mo 1              &kp LGUI   &tp LALT RET         &kp SPACE &kp BSPC  &kp N0
+   &kp TILDE  &kp EXCL          &kp AT      &kp HASH          &kp DLLR   &kp PRCNT            &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
+   &kp AMPS   &kp KP_MULTIPLY   &kp UNDER   &kp PLUS          &kp MINUS  &trans               &kp N4 &kp N5 &kp N6 &kp LBKT &kp RBKT &kp PIPE
+   &kp HOME   &kp PRINTSCREEN   &kp END     &kp KP_MULTIPLY   &trans     &kp EQUAL            &kp N7 &kp N8 &kp N9 &kp LBRC &kp RBRC &trans 
+                                             &trans           &kp LGUI   &tp LALT RET         &kp SPACE &kp BSPC  &kp N0
 
 
                         >;
