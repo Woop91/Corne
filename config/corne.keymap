@@ -34,26 +34,26 @@
 // | TAB  |  Q  |  W  |  F  |  P  |    B    |   |  J  |  L   |  U  |  Y  |  ;  | ESC |
 // | SHFT |  A  |  R  |  S  |  T  |    G    |   |  M  |  N   |  E  |  I  |  O  |  '   |
 // | CTRL |  Z  |  X  |  C  |  D  |    V    |   |  K  |  H   |  ,  |  .  |  /  | ALT |
-//                    | RSE | GUI | ALT/ENT |   | SPC | BKSP | LWR |
+//                    |  RSE| GUI | ALT/ENT |   | SPC | BKSP | LWR |
                         bindings = <
    &kp TAB    &kp Q &kp W &kp F    &kp P &kp B             &kp J &kp L  &kp U     &kp Y   &kp SEMI  &kp ESC
    &kp LSHFT  &kp A &kp R &kp S    &kp T &kp G             &kp M &kp N  &kp E     &kp I   &kp O     &kp SQT
    &kp LCTRL  &kp Z &kp X &kp C    &kp D &kp V             &kp K &kp H  &kp COMMA &kp DOT &kp FSLH  &kp RALT 
-                          &kp LGUI &mo 1 &tp LALT RET      &kp SPACE    &kp BSPC  &mo 2
+                  &mo 1 &kp LGUI  &tp LALT RET             &kp SPACE    &kp BSPC  &mo 2
                         >;
                 };
 
                 layer_above {
 // -----------------------------------------------------------------------------------------
-// |  ~   |  !   |  @  |  #  |  $  |  %  |            |  1  |  2  |  3 | (   |  )  |   \   |
-// |  &   |  *   |  _  |  +  |  -  |     |            |  4  |  5  | 6  |   [ |  ]  |  "|"  |  
-// |      |PSCRN |     |  *  |     |  =  |            |  7  |  8  | 9  |  {  |  }  |       |
-//                     | RSE | GUI | ENT |            | SPC | BKSP|  0 |
+// |  ~   |  !  |  @  |  #  |  $  |  %  |            |  1  |  2  |  3 | (   |  )  |   \   |
+// |  &   |     |  _  |  +  |  -  |     |            |  4  |  5  | 6  |   [ |  ]  |  "|"  |  
+// |      |     |     |  *  |  %  |  =  |            |  7  |  8  | 9  |  {  |  }  |       |
+//                    |  .  |  ,  | ENT |            | SPC | BKSP|  0 |
                         bindings = <
-   &kp TILDE  &kp EXCL          &kp AT         &kp HASH           &kp DLLR   &kp PRCNT            &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
-   &kp AMPS   &kp KP_MULTIPLY   &kp UNDER      &kp PLUS           &kp MINUS  &trans               &kp N4 &kp N5 &kp N6 &kp LBKT &kp RBKT &kp PIPE
-   &trans     &kp PRINTSCREEN   &kp ALT_ERASE  &kp KP_MULTIPLY    &trans     &kp EQUAL            &kp N7 &kp N8 &kp N9 &kp LBRC &kp RBRC &trans 
-                                               &mo 1              &kp LGUI   &tp LALT RET         &kp SPACE &kp BSPC  &kp N0
+   &kp TILDE  &kp EXCL    &kp AT      &kp HASH          &kp DLLR   &kp PRCNT            &kp N1 &kp N2 &kp N3 &kp LPAR &kp RPAR &kp BSLH
+   &kp AMPS   &trans      &kp UNDER   &kp PLUS          &kp MINUS  &trans               &kp N4 &kp N5 &kp N6 &kp LBKT &kp RBKT &kp PIPE
+   &trans     &trans      &trans      &kp KP_MULTIPLY   &kp PRCNT  &kp EQUAL            &kp N7 &kp N8 &kp N9 &kp LBRC &kp RBRC &trans 
+                                      &kp DOT           &kp COMMA  &kp RET              &kp SPACE &kp BSPC  &kp N0
 
 
                         >;
@@ -61,15 +61,15 @@
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// |       |  F1    |  F2    |  F3    |  F4    |  F5     |                   |  F6     |  F7  |  F8  |  F9  |  F10   |   F11  | 
-// |       |  BT0   |  BT1   |  BT2   |  BT3   |  BT4    |                   |  PG_up  |  UP  |  LFT |  RGT |        |   F12  |
-// |       |        |        |        |  bck   |  FWD    |                   |  PG_dwn |  DWN |  Prev|  Next|  Vol - |  Vol + |
-//                           | BT_CLR |        |  rclick |                   |         |  Play/Pause |      |
+// | BT_CLR |  F1    |  F2    |  F3    |  F4    |  F5     |                  |        |         |   Vol + |     | BRI_UP   | ESC |
+// | RGB_TOG|  F6    |  F7    |  F8    |  F9    |  F10    |                  |  Prev  |  Next   |   Vol - |     | BRI_AUTO |     |
+// | BL_TOG |  BT_1  |  BT_ 2 |  BT_3  |  BT_4  |  BT_5   |                  |   RW   |  FF     |   MUTE  |     | C_BRI_DN |     |
+//                            |  F11   |  F12   |         |                  |        |  PP     |         | 
                         bindings = <
-   &trans    &kp F1          &kp F2         &kp F3          &kp F4          &kp F5                      &kp F6     &kp F7   &kp F8     &kp F9     &kp F10       &kp F11
-   &trans    &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                &kp PG_UP  &kp UP   &kp LEFT   &kp RIGHT  &trans        &kp F12
-   &trans    &trans          &trans         &trans          &kp C_AC_BACK   &kp C_AC_FORWARD            &kp PG_DN  &kp DOWN &kp C_PREV &kp C_NEXT &kp C_VOL_DN  &kp C_VOL_UP
-                                            &bt BT_CLR      &trans          &kp K_APP                   &trans     &kp C_PP &trans 
+   &bt BT_CLR          &kp F1         &kp F2          &kp F3         &kp F4         &kp F5                &trans       &trans        &kp C_VOL_UP  &trans    &kp C_BRI_UP    &kp ESC             
+   &rgb_ug RGB_TOG     &kp F6         &kp F7          &kp F8         &kp F9         &kp F10               &kp C_PREV   &kp C_NEXT    &kp C_VOL_DN  &trans    &kp C_BRI_AUTO  &trans                                          
+   &rgb_ug BL_TOG      &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4          &kp C_RW     &kp C_FF      &kp C_MUTE    &trans    &kp C_BRI_DN    &trans      
+                                                      &kp F11        &kp F12        &trans                &trans       &kp C_PP      &trans      
                         >;        
                 };
         };
