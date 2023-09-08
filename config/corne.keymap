@@ -68,7 +68,7 @@
                         bindings = <
    &bt BT_CLR          &kp F1         &kp F2          &kp F3         &kp F4         &kp F5                &trans       &trans        &kp C_VOL_UP  &trans    &kp C_BRI_UP    &kp ESC             
    &rgb_ug RGB_TOG     &kp F6         &kp F7          &kp F8         &kp F9         &kp F10               &kp C_PREV   &kp C_NEXT    &kp C_VOL_DN  &trans    &kp C_BRI_AUTO  &trans                                          
-   &rgb_ug BL_TOG      &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4          &kp C_RW     &kp C_FF        &kp C_MUTE    &trans    &kp C_BRI_DN    &trans      
+   &rgb_ug BL_TOG      &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4          &kp C_RW     &kp C_FF      &kp C_MUTE    &trans    &kp C_BRI_DN    &trans      
                                                       &kp F11        &kp F12        &trans                &trans       &kp C_PP      &trans      
                         >;        
                 };
