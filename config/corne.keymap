@@ -61,14 +61,14 @@
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// | TAB | PG_up   |       | BWRSR BCK |  UP       |  BWRSR FWD  |               |        |         |   Vol + |     | BRI_UP   | ESC |
-// | TAB | PG_dwn  | UP    |  LFT      |  DWN      |     RGT     |               |  Prev  |  Next   |   Vol - |     | BRI_AUTO |     |
-// | TAB |         | DWN   |           |           |             |               |   RW   |  FF     |   MUTE  |     | C_BRI_DN |     |
+// | TAB | PG_up   |       | BWRSR BCK |  UP       |  BWRSR FWD  |               |  Vol + |  MUTE   |  Vol -  |     |     | ESC     |
+// | TAB | PG_dwn  | UP    |  LFT      |  DWN      |     RGT     |               |  Prev  |  Next   |         |     |     | BRI_UP  |
+// | TAB |         | DWN   |           |           |             |               |   RW   |  FF     |         |     |     | C_BRI_DN|
 //                         |   PSCRN   |   ENT     |   rclick    |               |        |  PP     |         | 
                         bindings = <
-   &trans   &kp PG_UP     &trans     &kp C_AC_BACK      &kp UP       &kp C_AC_FORWARD                 &trans       &trans        &kp C_VOL_UP  &trans    &kp C_BRI_UP    &kp ESC             
-   &trans   &kp PG_DN     &kp UP     &kp LEFT           &kp DOWN     &kp RIGHT                        &kp C_PREV   &kp C_NEXT    &kp C_VOL_DN  &trans    &kp C_BRI_AUTO  &trans                                          
-   &trans   &trans        &kp DOWN   &trans             &trans       &trans                           &kp C_RW     &kp C_FF      &kp C_MUTE    &trans    &kp C_BRI_DN    &trans      
+   &trans   &kp PG_UP     &trans     &kp C_AC_BACK      &kp UP       &kp C_AC_FORWARD                 &trans       &trans        &trans        &trans    &trans     &kp ESC             
+   &trans   &kp PG_DN     &kp UP     &kp LEFT           &kp DOWN     &kp RIGHT                        &kp C_PREV   &kp C_NEXT    &kp C_VOL_DN  &trans    &trans     &kp C_VOL_UP                                       
+   &trans   &trans        &kp DOWN   &trans             &trans       &trans                           &kp C_RW     &kp C_FF      &kp C_MUTE    &trans    &trans     &kp C_BRI_DN      
                                      &kp PRINTSCREEN    &kp K_APP    &kp RET                          &trans       &kp C_PP      &trans      
                         >;        
                 };
