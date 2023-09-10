@@ -61,15 +61,15 @@
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// |      | UP  |     |   TAB     |  PG_up   | TAB       |                         |  Vol + |  MUTE  |  Vol -  |     |     | ESC     |
-// |  LFT | DWN | RGT | BWRSR BCK |  PG_dwn  | BWRSR FWD |                         |  Prev  |  Next  |         |     |     | BRI_UP  |
-// |BT CLR| BT1 | BT2 |   BT3     |   BT4    | BT5       |                         |   RW   |  FF    |         |     |     | C_BRI_DN|
-//                     |   PSCRN  |  ENT     | rclick    |                         | RGB ON |  PP    |  BL ON  | 
+// |      | UP  |     |   TAB     |  PG_up   | TAB       |                         |  Vol + |  MUTE  |  Vol -  |     |           | ESC     |
+// |  LFT | DWN | RGT | BWRSR BCK |  PG_dwn  | BWRSR FWD |                         |  Prev  |  Next  |         |     |  RGB ON   | BRI_UP  |
+// |BT CLR| BT1 | BT2 |   BT3     |   BT4    | BT5       |                         |   RW   |  FF    |         |     |  BL ON    | C_BRI_DN|
+//                     |   PSCRN  |  ENT     | rclick    |                         |        |  PP    |         | 
                         bindings = <
-   &trans     &kp UP         &trans          &kp LC(LS(TAB)) &kp PG_UP      &kp LC(TAB)                      &kp C_VOL_UP &kp C_VOL_DN    &kp C_MUTE    &trans    &trans   &kp ESC             
-   &kp LEFT   &kp DOWN       &kp RIGHT       &kp C_AC_BACK   &kp PG_DN      &kp C_AC_FORWARD                 &kp C_PREV   &kp C_NEXT      &trans        &trans    &trans   &kp C_VOL_UP                                       
-   &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4                     &kp C_RW     &kp C_FF        &trans        &trans    &trans   &kp C_BRI_DN      
-                                &kp PRINTSCREEN    &kp K_APP    &kp RET                                      &rgb_ug RGB_ON      &kp C_PP        &rgb_ug BL_ON     
+   &trans     &kp UP         &trans          &kp LC(LS(TAB)) &kp PG_UP      &kp LC(TAB)                      &kp C_VOL_UP &kp C_VOL_DN    &kp C_MUTE    &trans           &trans   &kp ESC             
+   &kp LEFT   &kp DOWN       &kp RIGHT       &kp C_AC_BACK   &kp PG_DN      &kp C_AC_FORWARD                 &kp C_PREV   &kp C_NEXT      &trans        &rgb_ug BL_ON    &trans   &kp C_VOL_UP                                       
+   &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4                     &kp C_RW     &kp C_FF        &trans        &rgb_ug RGB_ON   &trans   &kp C_BRI_DN      
+                                          &kp PRINTSCREEN    &kp K_APP      &kp RET                          &trans       &kp C_PP        &trans      
                         >;        
                 };
         };
