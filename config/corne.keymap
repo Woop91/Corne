@@ -61,10 +61,10 @@
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// |      | UP  |     |   TAB     |  PG_up   | TAB       |                         |  Vol + |  MUTE   |  Vol -  |     |     | ESC     |
-// |  LFT | DWN | RGT | BWRSR BCK |  PG_dwn  | BWRSR FWD |                         |  Prev  |  Next   |         |     |     | BRI_UP  |
-// |BT CLR| BT1 | BT2 |   BT3     |   BT4    | BT5       |                         |   RW   |  FF     |         |     |     | C_BRI_DN|
-//                     |   PSCRN  |  ENT     | rclick    |                         |        |  PP     |         | 
+// |      | UP  |     |   TAB     |  PG_up   | TAB       |                         |  Vol + |  MUTE  |  Vol -  |     |     | ESC     |
+// |  LFT | DWN | RGT | BWRSR BCK |  PG_dwn  | BWRSR FWD |                         |  Prev  |  Next  |         |     |     | BRI_UP  |
+// |BT CLR| BT1 | BT2 |   BT3     |   BT4    | BT5       |                         |   RW   |  FF    |         |     |     | C_BRI_DN|
+//                     |   PSCRN  |  ENT     | rclick    |                         | RGB ON |  PP    |  BL ON  | 
                         bindings = <
    &trans     &kp UP         &trans          &kp LC(LS(TAB)) &kp PG_UP      &kp LC(TAB)                      &kp C_VOL_UP &kp C_VOL_DN    &kp C_MUTE    &trans    &trans   &kp ESC             
    &kp LEFT   &kp DOWN       &kp RIGHT       &kp C_AC_BACK   &kp PG_DN      &kp C_AC_FORWARD                 &kp C_PREV   &kp C_NEXT      &trans        &trans    &trans   &kp C_VOL_UP                                       
