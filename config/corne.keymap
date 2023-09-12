@@ -36,10 +36,10 @@
 // | CTRL |  Z  |  X  |  C  |  D  |    V    |   |  K  |  H   |  ,  |  .  |  /  | ALT |
 //                    |  RSE| GUI | ALT/ENT |   | SPC | BKSP | LWR |
                         bindings = <
-   &kp TAB     &kp Q          &kp W         &kp F          &tp LC(P) P    &kp B                          &kp J &kp L &kp U &kp Y  &kp SEMI &kp ESC
-   &kp LSHFT   &kp A          &kp R         &kp S          &kp T          &kp G                          &kp M &kp N &kp E &kp I &kp O &kp SQT
-   &kp LCTRL   &tp LC(Y) Z    &tp LC(Z) X   &tp LC(X) C    &tp LC(C) D    &tp LC(V) V                    &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp RALT 
-                                                &mo 1        &kp LGUI     &tp LALT RET                       &kp SPACE    &kp BSPC  &mo 2
+   &tp LA(TAB) TAB   &kp Q          &kp W         &kp F          &tp LC(P) P    &kp B                          &kp J &kp L &kp U &kp Y  &kp SEMI &kp ESC
+   &kp LSHFT         &kp A          &kp R         &kp S          &kp T          &kp G                          &kp M &kp N &kp E &kp I &kp O &kp SQT
+   &kp LCTRL         &tp LC(Y) Z    &tp LC(Z) X   &tp LC(X) C    &tp LC(C) D    &tp LC(V) V                    &kp K &kp H &kp COMMA &kp DOT &kp FSLH  &kp RALT 
+                                                  &mo 1        &kp LGUI     &tp LALT RET                       &kp SPACE    &kp BSPC  &mo 2
                         >;
                 };
 
