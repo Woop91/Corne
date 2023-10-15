@@ -11,6 +11,7 @@
 / {
     combos {
         compatible = "zmk,combos";
+
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
@@ -18,16 +19,19 @@
         };
     };
 };
+
 / {
     combos {
         compatible = "zmk,combos";
-        combo_BTclr		{
+
+        combo_BTclr {
             timeout-ms = <50>;
             key-positions = <18 19 20>;
             bindings = <&bt BT_CLR>;
         };
     };
 };
+
 / {
     behaviors {
         tp: tap_preferred {
@@ -89,6 +93,15 @@
 &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12       &kp C_AC_BACK    &kp PG_DN     &kp PG_UP        &kp C_AC_FORWARD  &kp C_BRI_DN  &kp C_BRI_UP
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &kp LC(LS(TAB))  &kp C_VOL_DN  &kp C_VOL_UP     &kp LC(TAB)       &kp C_RW      &kp C_FF
                                           &trans        &trans        &kp RET       &kp C_MUTE       &kp C_PP      &kp PRINTSCREEN
+            >;
+        };
+
+        super_ {
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E      &kp R     &kp T       &kp Y      &kp U      &kp I      &kp O    &kp P     &kp BSPC
+&kp CAPS   &kp A  &kp S  &kp D      &kp F     &kp G       &kp H      &kp J      &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LSHFT  &kp Z  &kp X  &kp C      &kp V     &kp B       &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                         &kp LCTRL  &kp LALT  &kp LGUI    &kp SPACE  &kp ENTER  &kp ESC
             >;
         };
     };
