@@ -61,7 +61,7 @@
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// |      | UP  |     |   TAB     |  PG_up   | TAB       |                         |  Vol + |  MUTE  |  Vol -  |     |           | ESC     |
+// |      | UP  |     |   TAB     |  PG_up   | TAB       |                         |  Vol + |  MUTE  |  Vol -   |     |           | ESC     |
 // |  LFT | DWN | RGT | BWRSR BCK |  PG_dwn  | BWRSR FWD |                         |  Prev  |  Next  |         |     |  RGB ON   | BRI_UP  |
 // |BT CLR| BT1 | BT2 |   BT3     |   BT4    | BT5       |                         |   RW   |  FF    |         |     |  BL ON    | C_BRI_DN|
 //                     |   PSCRN  |  ENT     | rclick    |                         |        |  PP    |         | 
