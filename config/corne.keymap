@@ -18,7 +18,16 @@
         };
     };
 };
-
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_BTclr		{
+            timeout-ms = <50>;
+            key-positions = <18 19 20>;
+            bindings = <&bt BT_CLR>;
+        };
+    };
+};
 / {
     behaviors {
         tp: tap_preferred {
@@ -72,8 +81,8 @@
             // -----------------------------------------------------------------------------------------
             // |  F1  |  F2  |  F3  |  F4  |  F5   | F6     |                      |    LFT    |     DWN   |     UP    |     RGT      |  Prev    |  Next  |
             // |  F7  |  F8  |  F9  |  F10 |  F11  | F12    |                      | BWRSR BCK |   PG_dwn  |   PG_up   |   BWRSR FWD  |  BRI_DN  | BRI_UP | 
-            // |  BT0 |  BT1 |  BT2 |  BT3 |  BT4  | BT_CLR |                      |   TAB     |   Vol -   |    Vol +  |     TAB      |    RW    |   FF   |
-            //                 |   PSCRN  |  ENT     |     |                        |   MUTE    |    PP     |   PNTSCRN   |
+            // |  BT0 |  BT1 |  BT2 |  BT3 |  BT4  |        |                      |   TAB     |   Vol -   |    Vol +  |     TAB      |    RW    |   FF   |
+            //                 |        |  ENT     |     |                        |   MUTE    |    PP     |   PNTSCRN   |
 
             bindings = <
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp LEFT         &kp DOWN      &kp UP           &kp RIGHT         &kp C_PREV    &kp C_NEXT
