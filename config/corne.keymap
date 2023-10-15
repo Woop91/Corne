@@ -22,13 +22,6 @@
     };
 
     macros {
-        Web: Web {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>, <&macro_press>, <&kp>;
-
-            label = "WEB";
-        };
     };
 
     keymap {
@@ -76,15 +69,6 @@
 &kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12       &kp C_AC_BACK    &kp PG_DN     &kp PG_UP        &kp C_AC_FORWARD  &kp C_BRI_DN  &kp C_BRI_UP
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &kp LC(LS(TAB))  &kp C_VOL_DN  &kp C_VOL_UP     &kp LC(TAB)       &kp C_RW      &kp C_FF
                                           &trans        &trans        &kp RET       &kp C_MUTE       &kp C_PP      &kp PRINTSCREEN
-            >;
-        };
-
-        layer_3 {
-            bindings = <
-&kp TAB    &kp Q  &kp W  &kp E   &kp R   &kp T     &kp U   &kp I   &kp O      &kp P    &kp LBKT  &kp RBKT
-&kp CAPS   &kp A  &kp S  &kp D   &kp F   &kp G     &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
