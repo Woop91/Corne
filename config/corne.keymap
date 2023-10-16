@@ -45,6 +45,41 @@
         };
     };
 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_BTclr		{
+            timeout-ms = <50>;
+            key-positions = <18 19 20>;
+            bindings = <&bt BT_CLR>;
+        };
+    };
+};
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_caps		{
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp CLCK>;
+        };
+    };
+};
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_qwerty		{
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&tog 3 CLCK>;
+        };
+    };
+};
+
     macros {
     };
 
