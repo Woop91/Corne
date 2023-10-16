@@ -19,7 +19,6 @@
         };
     };
 };
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -31,7 +30,6 @@
         };
     };
 };
-
 / {
     behaviors {
         tp: tap_preferred {
@@ -44,7 +42,6 @@
             bindings = <&kp>, <&kp>;
         };
     };
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -55,8 +52,6 @@
         };
     };
 };
-
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -67,8 +62,6 @@
         };
     };
 };
-
-
 / {
     combos {
         compatible = "zmk,combos";
