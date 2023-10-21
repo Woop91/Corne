@@ -142,7 +142,7 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_(((( {
+        combo_BC {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&kp LEFT_PARENTHESIS>;
@@ -155,7 +155,7 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_)))) {
+        combo_BB {
             timeout-ms = <50>;
             key-positions = <19 20>;
             bindings = <&kp RIGHT_PARENTHESIS>;
