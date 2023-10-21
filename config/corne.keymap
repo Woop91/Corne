@@ -65,16 +65,16 @@
 
         layer_below {
             // -----------------------------------------------------------------------------------------
-            // |  F1  |  F2  |  F3  |  F4  |  F5   | F6     |                      |    LFT    |     DWN   |     UP    |     RGT      |  Prev    |  Next  |
-            // |  F7  |  F8  |  F9  |  F10 |  F11  | F12    |                      | BWRSR BCK |   PG_dwn  |   PG_up   |   BWRSR FWD  |  BRI_DN  | BRI_UP | 
-            // |  BT0 |  BT1 |  BT2 |  BT3 |  BT4  |        |                      |   TAB     |   Vol -   |    Vol +  |     TAB      |    RW    |   FF   |
-            //                 |        |  ENT     |     |                        |   MUTE    |    PP     |   PNTSCRN   |
+            // |  TAB                 |  PG_up   |  BWRSR BCK  |   UP   |  BWRSR FWD  |     bRIGHTNESS - |                       | BRI_UP    |   Prev    |       |  Next | PNTSCRN   |          | 
+            // |  CAPS Shift          |  PG_dwn  |      LFT    |   DWN  |    RGT      |     PRINT SCREEN |                       |           |   RW      |  PP   |  FF   |  LEFT     |  RIGHT   | 
+            // |  CONTROL             |   REDO   |     UNDO    |   CUT  |    COPY     |        PASTE     |                       |           |   VOL -   |  MUTE |  VOL +|           |          |                                                                                          
+	    //									      |  RSE| LWR  | ESC |                       | SPC | ALTE/NT | GUI |
 
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp LEFT         &kp DOWN      &kp UP           &kp RIGHT         &kp C_PREV    &kp C_NEXT
-&kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12       &kp C_AC_BACK    &kp PG_DN     &kp PG_UP        &kp C_AC_FORWARD  &kp C_BRI_DN  &kp C_BRI_UP
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &kp LC(LS(TAB))  &kp C_VOL_DN  &kp C_VOL_UP     &kp LC(TAB)       &kp C_RW      &kp C_FF
-                                          &trans        &trans        &kp RET       &kp C_MUTE       &kp C_PP      &kp PRINTSCREEN
+&tp LA(TAB) TAB        &kp PG_UP     &kp C_AC_BACK    &kp UP         &kp C_AC_FORWARD     &kp C_BRI_DN             &kp C_BRI_UP      &kp C_PREV      &trans       &kp C_NEXT     &kp PRINTSCREEN   &trans
+&tp LSHFT CAPS         &kp PG_DN     &kp LEFT         &kp PG_DN      &kp RIGHT            &kp PRINTSCREEN          &trans	     &kp C_RW	     &kp C_PP	  &kp C_FF	 &kp LEFT	   &kp RIGHT
+&kp LCTRL 	       &tp LC(Y) Z   &tp LC(Z) X      &tp LC(X) C    &tp LC(C) D          &tp LC(V) V	           &trans            &kp C_VOL_DN    &kp C_MUTE   &kp C_VOL_UP   &trans            &trans			
+	                                                            &mo 1        &mo 2        &kp ESC              &kp SPACE         &tp LALT RET    &kp LGUI
             >;
         };
 
