@@ -35,16 +35,16 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // | TAB  |  Q      |  W      |  F     |  P Print|    B         |                              |  J  |  L   |  U  |  Y  |  ;  | ESC |
-            // | SHFT |  A      |  R      |  S     |  T      |    G         |                              |  M  |  N   |  E  |  I  |  O  |  '   |
-            // | CTRL |  Z Redo |  X Undo |  C Cut |  D Copy |    V  Paste  |                              |  K  |  H   |  ,  |  .  |  /  | ALT |
-            //                                     |  RSE| LWR  | ALT/ENT |                                 | SPC | BKSP | GUI |
+            // | TAB        |  Q      |  W      |  F     |  P Print|    B         |                              |  J  |  L   |  U  |  Y  |  ;  | BKSP |
+            // | CAPS Shift |  A      |  R      |  S     |  T      |    G         |                              |  M  |  N   |  E  |  I  |  O  |  '   |
+            // | CTRL       |  Z Redo |  X Undo |  C Cut |  D Copy |    V  Paste  |                              |  K  |  H   |  ,  |  .  |  /  | ALT |
+            //                                          |  RSE| LWR  | ALT/ENT |                                 | SPC | BKSP | GUI |
 
             bindings = <
-&tp LA(TAB) TAB  &kp Q        &kp W        &kp F        &tp LC(P) P  &kp B          &kp J     &kp L         &kp U      &kp Y    &kp SEMI  &kp ESC
-&kp LSHFT        &kp A        &kp R        &kp S        &kp T        &kp G          &kp M     &kp N         &kp E      &kp I    &kp O     &kp SQT
-&kp LCTRL        &tp LC(Y) Z  &tp LC(Z) X  &tp LC(X) C  &tp LC(C) D  &tp LC(V) V    &kp K     &kp H         &kp COMMA  &kp DOT  &kp FSLH  &kp LALT
-                                           &mo 1        &mo 2        &kp SPACE      &kp BSPC  &tp LALT RET  &kp LGUI
+&tp LA(TAB) TAB        &kp Q        &kp W        &kp F        &tp LC(P) P  &kp B                 &kp J     &kp L         &kp U      &kp Y    &kp SEMI            &kp ESC
+&tp LSHFT CAPS         &kp A        &kp R        &kp S        &kp T        &kp G                 &kp M     &kp N         &kp E      &kp I    &kp O               &kp SQT
+&kp LCTRL              &tp LC(Y) Z  &tp LC(Z) X  &tp LC(X) C  &tp LC(C) D  &tp LC(V) V           &kp K     &kp H         &kp COMMA  &kp DOT  &tp FSLH RS(FSLH)   &kp LALT
+                                                 &mo 1        &mo 2        &kp SPACE             &kp BSPC  &tp LALT RET  &kp LGUI
             >;
         };
 
