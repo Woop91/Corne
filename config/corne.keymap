@@ -104,6 +104,11 @@
             bindings = <&kp DEL>;
             key-positions = <18 19 20>;
         };
+
+        Div {
+            bindings = <&kp KP_DIVIDE>;
+            key-positions = <7 6>;
+        };
     };
 };
 
