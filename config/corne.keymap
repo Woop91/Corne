@@ -8,10 +8,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/backlight.h>
-#include <dt-bindings/zmk/rgb.h>
-
 
 //-------------------------------------------------------COMBO-1-----------------------------------------------------------------------------------------------
 
@@ -19,23 +15,17 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_BTclr {
-            timeout-ms = <50>;
-            key-positions = <18 19 20>;
-            bindings = <&bt BT_CLR>;
-        };
-
         Fdel {
             bindings = <&kp DEL>;
             key-positions = <11 10>;
         };
-        
+
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-    
+
         combo_money {
             timeout-ms = <50>;
             key-positions = <18 30>;
@@ -54,37 +44,31 @@
             bindings = <&kp AT_SIGN>;
         };
 
-         combo_EXCL {
+        combo_EXCL {
             timeout-ms = <50>;
             key-positions = < 21 22>;
             bindings = <&kp EXCLAMATION>;
         };
 
-         combo_htag {
+        combo_htag {
             timeout-ms = <50>;
             key-positions = < 6 7>;
-            bindings = <&kp EXCLAMATION>;
+            bindings = <&kp HASH>;
         };
 
-         combo_fdel {
-            timeout-ms = <50>;
-            key-positions = < 9 10>;
-            bindings = <&kp EXCLAMATION>;
-        };
-
-         combo_qwerty {
+        combo_qwerty {
             timeout-ms = <50>;
             key-positions = <1 2 3 4 >;
             bindings = <&tog 3 CLCK>;
         };
 
-         combo_BC {
+        combo_BC {
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&kp LEFT_PARENTHESIS>;
         };
 
-         combo_BB {
+        combo_BB {
             timeout-ms = <50>;
             key-positions = <19 20>;
             bindings = <&kp RIGHT_PARENTHESIS>;
@@ -111,8 +95,6 @@
 //--------------------------------------------------------COMBO-12---------------------------------------------------------------------------------------------
 //------------------------------------------------------------------END OF COMBOS------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 //-------------------------------------------------------BEHAVIORS-----------------------------------------------------------------------------------------------
 
 / {
@@ -204,9 +186,9 @@
             // 			              |  RSE| LWR  | ESC |                  | SPC | ALTE/NT | GUI |
 
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &trans  &trans   &trans  &trans  &trans  &trans
-&kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12       &trans  &trans   &trans  &trans  &trans  &trans
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &trans  &trans   &trans  &trans  &trans  &trans
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &trans     &trans        &trans    &trans  &trans  &trans
+&kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12       &trans     &trans        &trans    &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &trans     &trans        &trans    &trans  &trans  &trans
                                           &mo 1         &mo 2         &kp ESC       &kp SPACE  &tp LALT RET  &kp LGUI
             >;
         };
