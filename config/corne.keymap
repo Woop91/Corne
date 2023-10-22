@@ -20,6 +20,11 @@
             key-positions = <18 19 20>;
             bindings = <&bt BT_CLR>;
         };
+
+        Fdel {
+            bindings = <&kp DEL>;
+            key-positions = <11 10>;
+        };
     };
 };
 
@@ -164,11 +169,12 @@
 };
 
 //--------------------------------------------------------COMBO-12---------------------------------------------------------------------------------------------
-	
+
 / {
     combos {
         compatible = "zmk,combos";
-        combo_fnbt		{
+
+        combo_fnbt {
             timeout-ms = <50>;
             key-positions = <19 20 21 22 >;
             bindings = <&mo 4>;
@@ -209,7 +215,7 @@
             //                                          |  RSE| LWR  | ALT/ENT |                                 | SPC | BKSP | GUI |
 
             bindings = <
-&tp LA(TAB) TAB  &kp Q        &kp W        &kp F        &tp LC(P) P  &kp B          &kp J      &kp L         &kp U      &kp Y    &kp SEMI           &kp DEL
+&tp LA(TAB) TAB  &kp Q        &kp W        &kp F        &tp LC(P) P  &kp B          &kp J      &kp L         &kp U      &kp Y    &kp SEMI           &kp BACKSPACE
 &tp LSHFT CAPS   &kp A        &kp R        &kp S        &kp T        &kp G          &kp M      &kp N         &kp E      &kp I    &kp O              &kp SQT
 &kp LCTRL        &tp LC(Y) Z  &tp LC(Z) X  &tp LC(X) C  &tp LC(C) D  &tp LC(V) V    &kp K      &kp H         &kp COMMA  &kp DOT  &tp FSLH RS(FSLH)  &kp LALT
                                            &mo 1        &mo 2        &kp ESC        &kp SPACE  &tp LALT RET  &kp LGUI
@@ -261,20 +267,19 @@
             >;
         };
 
-        layer_fnbt {	
-           //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-           //|  F1  |  F2  |  F3  |  F4  |  F5  | F16    |	        		|    |    |    |    |    |    |    								   
-           //|  F7  |  F8  |  F9  |  F10 |  F11 | F12    |                  |    |    |    |    |    |    |      
-           //|  BT0 |  BT1 |  BT2 |  BT3 |  BT4 |BT CLEAR|                  |    |    |    |    |    |    |      
-           // 			              |  RSE| LWR  | ESC |                  | SPC | ALTE/NT | GUI |
+        layer_fnbt {
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            //|  F1  |  F2  |  F3  |  F4  |  F5  | F16    |	        		|    |    |    |    |    |    |    								   
+            //|  F7  |  F8  |  F9  |  F10 |  F11 | F12    |                  |    |    |    |    |    |    |      
+            //|  BT0 |  BT1 |  BT2 |  BT3 |  BT4 |BT CLEAR|                  |    |    |    |    |    |    |      
+            // 			              |  RSE| LWR  | ESC |                  | SPC | ALTE/NT | GUI |
 
             bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6	            &kp   &kp   &kp   &kp   &kp   &kp
-&kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12		    &kp   &kp   &kp   &kp   &kp   &kp 
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR          &kp   &kp   &kp   &kp   &kp   &kp
-                        &mo 1         &mo 2         &kp ESC             &kp SPACE         &tp LALT RET    &kp LGUI
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp        &kp           &kp       &kp  &kp  &kp
+&kp F7        &kp F8        &kp F9        &kp F10       &kp F11       &kp F12       &kp        &kp           &kp       &kp  &kp  &kp
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &kp        &kp           &kp       &kp  &kp  &kp
+                                          &mo 1         &mo 2         &kp ESC       &kp SPACE  &tp LALT RET  &kp LGUI
             >;
         };
     };
 };
-
