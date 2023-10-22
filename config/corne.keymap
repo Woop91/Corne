@@ -171,7 +171,7 @@
         combo_fnbt		{
             timeout-ms = <50>;
             key-positions = <19 20 21 22 >;
-            bindings = <&tog 4>;
+            bindings = <&mo 4>;
         };
     };
 };
