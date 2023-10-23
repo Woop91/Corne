@@ -114,6 +114,16 @@
             bindings = <&kp LEFT_CONTROL>;
             key-positions = <37 38>;
         };
+
+        Trial {
+            bindings = <&kp C_QUIT>;
+            key-positions = <0 2 1>;
+        };
+
+        Trial2 {
+            bindings = <&kp K_LOCK>;
+            key-positions = <0 2 3 1>;
+        };
     };
 };
 
