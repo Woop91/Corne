@@ -124,6 +124,16 @@
             bindings = <&kp K_LOCK>;
             key-positions = <0 2 3 1>;
         };
+
+        Trial3 {
+            bindings = <&caps_word>;
+            key-positions = <35 34 32 33>;
+        };
+
+        Trial4 {
+            bindings = <&bootloader>;
+            key-positions = <11 9 10 8>;
+        };
     };
 };
 
