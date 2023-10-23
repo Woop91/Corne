@@ -109,6 +109,11 @@
             bindings = <&kp KP_DIVIDE>;
             key-positions = <7 6>;
         };
+
+        Ctrltmb {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <37 38>;
+        };
     };
 };
 
