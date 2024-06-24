@@ -94,8 +94,8 @@
         };
 
         Ente {
-            bindings = <&kp RET>;
-            key-positions = <30 31>;
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <31 30>;
         };
 
         Spc {
@@ -139,13 +139,18 @@
         };
 
         eqls {
-            bindings = <&kp EQUAL>;
+            bindings = <&kp KP_EQUAL>;
             key-positions = <15 16 14>;
         };
 
         plus {
-            bindings = <&kp PLUS>;
+            bindings = <&kp KP_PLUS>;
             key-positions = <21 20 19>;
+        };
+
+        slash {
+            bindings = <&kp KP_SLASH>;
+            key-positions = <28 29>;
         };
     };
 };
