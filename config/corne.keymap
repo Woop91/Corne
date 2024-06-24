@@ -64,13 +64,13 @@
 
         combo_BC {
             timeout-ms = <50>;
-            key-positions = <15 16>;
+            key-positions = <15 14>;
             bindings = <&kp LEFT_PARENTHESIS>;
         };
 
         combo_BB {
             timeout-ms = <50>;
-            key-positions = <19 20>;
+            key-positions = <20 21>;
             bindings = <&kp RIGHT_PARENTHESIS>;
         };
 
@@ -87,7 +87,7 @@
 
         Deltl {
             bindings = <&kp BACKSPACE>;
-            key-positions = <18 19>;
+            key-positions = <19 20>;
         };
 
         Ente {
@@ -163,9 +163,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    };
-
-    macros {
     };
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------
