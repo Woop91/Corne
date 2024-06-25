@@ -167,6 +167,11 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
         };
+
+        dquotes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <16 17>;
+        };
     };
 };
 
