@@ -20,12 +20,12 @@
 
         Fdel {
             bindings = <&kp DEL>;
-            key-positions = <11 10>;
+            key-positions = <10 11>;
         };
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>;
+            key-positions = <10 9>;
             bindings = <&kp ESC>;
         };
 
@@ -43,7 +43,7 @@
 
         combo_AT {
             timeout-ms = <50>;
-            key-positions = < 12 13>;
+            key-positions = <13 16>;
             bindings = <&kp AT_SIGN>;
         };
 
@@ -130,7 +130,7 @@
 
         Trial4 {
             bindings = <&bootloader>;
-            key-positions = <11 9 10 8>;
+            key-positions = <>;
         };
 
         eqls {
@@ -151,6 +151,21 @@
         equals2 {
             bindings = <&kp EQUAL>;
             key-positions = <5 4>;
+        };
+
+        lcontrol {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <25 26>;
+        };
+
+        lcaps {
+            bindings = <&kp CAPS>;
+            key-positions = <13 14>;
+        };
+
+        ltab {
+            bindings = <&kp TAB>;
+            key-positions = <1 2>;
         };
     };
 };
