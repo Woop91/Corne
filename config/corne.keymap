@@ -37,7 +37,7 @@
 
         combo_and {
             timeout-ms = <50>;
-            key-positions = < 13 15>;
+            key-positions = <13 19>;
             bindings = <&kp AMPERSAND>;
         };
 
@@ -98,11 +98,6 @@
             key-positions = <31 30>;
         };
 
-        Spc {
-            bindings = <&kp SPACE>;
-            key-positions = <16 15 14>;
-        };
-
         Fdel2 {
             bindings = <&kp DEL>;
             key-positions = <18 19 20>;
@@ -151,6 +146,11 @@
         slash {
             bindings = <&kp KP_SLASH>;
             key-positions = <28 29>;
+        };
+
+        equals2 {
+            bindings = <&kp EQUAL>;
+            key-positions = <5 4>;
         };
     };
 };
