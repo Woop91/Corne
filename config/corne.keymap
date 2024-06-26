@@ -172,6 +172,26 @@
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <16 17>;
         };
+
+        blank {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <3 4>;
+        };
+
+        blank2 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <15 16>;
+        };
+
+        blank3 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <28 27>;
+        };
+
+        blank4 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <18 19>;
+        };
     };
 };
 
