@@ -174,12 +174,12 @@
         };
 
         blank {
-            bindings = <&kp NUMBER_1>;
+            bindings = <&kp TAB>;
             key-positions = <3 4>;
         };
 
         blank2 {
-            bindings = <&kp NUMBER_2>;
+            bindings = <&kp CAPSLOCK>;
             key-positions = <15 16>;
         };
 
