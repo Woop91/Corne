@@ -145,12 +145,12 @@
 
         slash {
             bindings = <&kp KP_SLASH>;
-            key-positions = <28 29>;
+            key-positions = <4 5>;
         };
 
         equals2 {
             bindings = <&kp EQUAL>;
-            key-positions = <5 4>;
+            key-positions = <28 29>;
         };
 
         lcontrol {
