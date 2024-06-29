@@ -95,7 +95,7 @@
 
         Ente {
             bindings = <&kp SINGLE_QUOTE>;
-            key-positions = <31 30>;
+            key-positions = <18 19>;
         };
 
         Fdel2 {
@@ -104,7 +104,7 @@
         };
 
         Div {
-            bindings = <&kp KP_DIVIDE>;
+            bindings = <&kp DQT>;
             key-positions = <7 6>;
         };
 
@@ -144,7 +144,7 @@
         };
 
         slash {
-            bindings = <&kp KP_SLASH>;
+            bindings = <&kp KP_DIVIDE>;
             key-positions = <4 5>;
         };
 
@@ -184,7 +184,7 @@
         };
 
         blank3 {
-            bindings = <&kp NUMBER_2>;
+            bindings = <&kp LEFT_CONTROL>;
             key-positions = <28 27>;
         };
 
