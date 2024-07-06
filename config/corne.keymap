@@ -61,16 +61,16 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB                 |  PG_up   |  BWRSR BCK  |   UP   |  BWRSR FWD  |     bRIGHTNESS - |                       | BRI_UP    |   Prev    |       |  Next | PNTSCRN   |
-// |  CAPS Shift          |  PG_dwn  |      LFT    |   DWN  |    RGT      |     PRINT SCREEN |                       |   RW      |  PP   |  FF   |  LEFT     | RIGHT   |
-// |   REDO   |     UNDO    |   CUT  |    COPY     |        PASTE     |                       |           |   VOL -   |  MUTE |  VOL +|           |
-//           |  RSE| LWR  | ESC |                       | SPC | ALTE/NT | GUI |
+// |  TAB         |  PG_up   |  BWRSR BCK  |   UP   |  BWRSR FWD  |   bRIGHTNESS - |                       | BRI_UP |   Prev  |       |  Next | PNTSCRN |
+// |  CAPS Shift  |  PG_dwn  |    LFT      |   DWN  |    RGT      |   PRINT SCREEN |                       |   RW   |   PP    |  FF   |  LEFT | RIGHT   |
+// |  CONTROL     |   REDO   |   UNDO      |   CUT  |   COPY      |   PASTE        |                       |        |   VOL - |  MUTE |  VOL +|         |
+//                                                              |  RSE| LWR  | ESC |                       | SPC | ALTE/NT | GUI |
 
                         display-name = "Raise";
                         bindings = <
 
-   AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
-   AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
+   &kp PG_UP    &kp C_AC_BACK  &kp UP          &kp C_AC_FORWARD  &kp C_BRI_DN        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
+   &kp PG_DN    &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PRINTSCREEN      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
    AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
                        &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
                         >;
