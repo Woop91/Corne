@@ -3,10 +3,184 @@
  *
  * SPDX-License-Identifier: MIT
  */
+//-------------------------------------------------------INCLUDE AREA-----------------------------------------------------------------------------------------------
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/rgb.h>
+
+//-------------------------------------------------------COMBO-1-----------------------------------------------------------------------------------------------
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <10 9>;
+            bindings = <&kp ESC>;
+        };
+
+        combo_money {
+            timeout-ms = <50>;
+            key-positions = <18 30>;
+            bindings = <&kp DLLR>;
+        };
+
+        combo_and {
+            timeout-ms = <50>;
+            key-positions = <13 19>;
+            bindings = <&kp AMPERSAND>;
+        };
+
+        combo_AT {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            bindings = <&kp AT_SIGN>;
+        };
+
+        combo_EXCL {
+            timeout-ms = <50>;
+            key-positions = < 21 22>;
+            bindings = <&kp EXCLAMATION>;
+        };
+
+        combo_htag {
+            timeout-ms = <50>;
+            key-positions = < 6 7>;
+            bindings = <&kp HASH>;
+        };
+
+        combo_qwerty {
+            timeout-ms = <50>;
+            key-positions = <1 2 3 4 >;
+            bindings = <&tog 3 CLCK>;
+        };
+
+        combo_BC {
+            timeout-ms = <50>;
+            key-positions = <15 14>;
+            bindings = <&kp LEFT_PARENTHESIS>;
+        };
+
+        combo_BB {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
+        };
+
+        combo_fnbt {
+            timeout-ms = <50>;
+            key-positions = <7 8 9 10>;
+            bindings = <&mo 4>;
+        };
+
+        Talt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <40 39>;
+        };
+
+        Deltl {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <19 20>;
+        };
+
+        Ente {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <18 19>;
+        };
+
+        Fdel2 {
+            bindings = <&kp DEL>;
+            key-positions = <18 19 20>;
+        };
+
+        Div {
+            bindings = <&kp DQT>;
+            key-positions = <7 6>;
+        };
+
+        Ctrltmb {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <37 38>;
+        };
+
+        Trial {
+            bindings = <&kp C_QUIT>;
+            key-positions = <0 2 1>;
+        };
+
+        };
+
+        Trial4 {
+            bindings = <&bootloader>;
+            key-positions = <>;
+        };
+
+        eqls {
+            bindings = <&kp KP_EQUAL>;
+            key-positions = <15 16 14>;
+        };
+
+        plus {
+            bindings = <&kp KP_PLUS>;
+            key-positions = <21 20 19>;
+        };
+
+        slash {
+            bindings = <&kp KP_DIVIDE>;
+            key-positions = <4 5>;
+        };
+
+        equals2 {
+            bindings = <&kp EQUAL>;
+            key-positions = <28 29>;
+        };
+
+        lcontrol {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <25 26>;
+        };
+
+        lcaps {
+            bindings = <&kp CAPS>;
+            key-positions = <13 14>;
+        };
+
+        ltab {
+            bindings = <&kp TAB>;
+            key-positions = <1 2>;
+        };
+
+        dquotes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <16 17>;
+        };
+
+        blank {
+            bindings = <&kp TAB>;
+            key-positions = <3 4>;
+        };
+
+        blank2 {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <15 16>;
+        };
+
+        blank3 {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <28 27>;
+        };
+
+        blank4 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <18 19>;
+        };
+    };
+};
 
 
 #define AS(keycode) &as LS(keycode) keycode
