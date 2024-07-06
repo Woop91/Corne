@@ -69,10 +69,10 @@
                         display-name = "Raise";
                         bindings = <
 
-   &kp PG_UP    &kp C_AC_BACK  &kp UP          &kp C_AC_FORWARD  &kp C_BRI_DN        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
-   &kp PG_DN    &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PRINTSCREEN      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
-   AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-                       &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
+   &kp PG_UP    &kp C_AC_BACK  &kp UP          &kp C_AC_FORWARD  &kp C_BRI_DN            &kp C_BRI_UP  &kp C_PREV    &trans        &kp C_NEXT       &kp PRINTSCREEN  
+   &kp PG_DN    &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PRINTSCREEN         &kp C_RW      &kp C_PP      &kp C_FF      &kp LEFT         &kp RIGHT
+   AS(GRAVE)    &trans         &trans          AS(COMMA)         &kp COLON               &trans        &kp C_VOL_DN  &kp C_MUTE    &kp C_VOL_UP     &trans           
+                                              &kp LGUI  &kp ESC   &kp SPACE              AS(RET)   &trans    &kp TAB
                         >;
                 };
         };
