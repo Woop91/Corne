@@ -157,18 +157,38 @@
             key-positions = <39 40>;
         };
 
-        tra {
+        mult {
+            bindings = <&kp KP_MULTIPLY>;
+            key-positions = <2 3 4>;
+        };
+
+        divide {
+            bindings = <&kp KP_DIVIDE>;
+            key-positions = <7 8 9>;
+        };
+
+        non {
+            bindings = <&none>;
+            key-positions = <3 4>;
+        };
+
+        non2 {
+            bindings = <&kp EQUAL>;
+            key-positions = <15 16>;
+        };
+
+        non5 {
             bindings = <&none>;
             key-positions = <7 8>;
         };
 
-        blnk {
-            bindings = <&trans>;
+        non09 {
+            bindings = <&none>;
             key-positions = <31 32>;
         };
 
-        blank6 {
-            bindings = <&trans>;
+        non87 {
+            bindings = <&none>;
             key-positions = <30 31>;
         };
     };
