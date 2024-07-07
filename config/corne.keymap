@@ -117,19 +117,9 @@
             key-positions = <16 15 14>;
         };
 
-        slash {
-            bindings = <&kp KP_DIVIDE>;
-            key-positions = <4 5>;
-        };
-
         equals2 {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <16 17>;
-        };
-
-        dquotes {
-            bindings = <&kp KP_EQUAL>;
-            key-positions = <28 29>;
         };
 
         Lcontrol {
@@ -167,39 +157,59 @@
             key-positions = <7 8 9>;
         };
 
-        non {
+        Eqals {
             bindings = <&kp EQUAL>;
             key-positions = <15 16>;
         };
 
-        equals {
-            bindings = <&trans>;
-            key-positions = <4 3>;
-        };
-
-        non5 {
-            bindings = <&none>;
-            key-positions = <7 8>;
-        };
-
-        non09 {
-            bindings = <&none>;
-            key-positions = <31 32>;
-        };
-
-        non87 {
+        Grtrtn {
             bindings = <&kp GREATER_THAN>;
             key-positions = <30 31>;
         };
 
-        noner {
+        Lssthn {
             bindings = <&kp LESS_THAN>;
             key-positions = <29 28>;
         };
 
-        noners7 {
+        Qstmk {
             bindings = <&kp QUESTION>;
             key-positions = <27 28>;
+        };
+
+        none {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <5 4>;
+        };
+
+        nonf {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <3 4>;
+        };
+
+        non54 {
+            bindings = <&kp K_FIND>;
+            key-positions = <7 8>;
+        };
+
+        non352 {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <31 32>;
+        };
+
+        blank {
+            bindings = <&kp ESC>;
+            key-positions = <10 9>;
+        };
+
+        spare {
+            bindings = <&kp K_FIND2>;
+            key-positions = <22 21>;
+        };
+
+        other {
+            bindings = <&kp C_AC_FIND>;
+            key-positions = <34 33>;
         };
     };
 };
