@@ -168,13 +168,13 @@
         };
 
         non {
-            bindings = <&none>;
-            key-positions = <3 4>;
-        };
-
-        non2 {
             bindings = <&kp EQUAL>;
             key-positions = <15 16>;
+        };
+
+        equals {
+            bindings = <&trans>;
+            key-positions = <4 3>;
         };
 
         non5 {
@@ -188,8 +188,18 @@
         };
 
         non87 {
-            bindings = <&none>;
+            bindings = <&kp GREATER_THAN>;
             key-positions = <30 31>;
+        };
+
+        noner {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <29 28>;
+        };
+
+        noners7 {
+            bindings = <&kp QUESTION>;
+            key-positions = <27 28>;
         };
     };
 };
