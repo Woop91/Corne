@@ -184,12 +184,12 @@
       zmk,matrix_transform = &five_column_transform;
     };
 
-    behaviors {
-        as: auto_shift {
+    tp: tap_preferred {
             compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
