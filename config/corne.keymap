@@ -211,6 +211,11 @@
             bindings = <&kp C_AC_FIND>;
             key-positions = <34 33>;
         };
+
+        maximize {
+            bindings = <&kp F11>;
+            key-positions = <36 37>;
+        };
     };
 };
 
