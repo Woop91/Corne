@@ -56,7 +56,7 @@
         combo_htag {
             timeout-ms = <50>;
             key-positions = < 6 7>;
-            bindings = <&kp HASH>;
+            bindings = <&kp LEFT_BRACKET>;
         };
 
         combo_BC {
@@ -188,7 +188,7 @@
         };
 
         non54 {
-            bindings = <&kp K_FIND>;
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <7 8>;
         };
 
@@ -263,7 +263,7 @@
 &tp LA(TAB) TAB  &kp Q        &kp W        &kp F        &tp LC(P) P  &kp B          &kp J      &kp L    &kp U         &kp Y    &kp SEMI           &kp BACKSPACE
 &tp LSHFT CAPS   &kp A        &kp R        &kp S        &kp T        &kp G          &kp M      &kp N    &kp E         &kp I    &kp O              &kp SQT
 &kp LCTRL        &tp LC(Y) Z  &tp LC(Z) X  &tp LC(X) C  &tp LC(C) D  &tp LC(V) V    &kp K      &kp H    &kp COMMA     &kp DOT  &tp FSLH RS(FSLH)  &kp LALT
-                                           &mo 1        &mo 2        &kp ESC        &kp SPACE  &kp RET  &kp LEFT_GUI
+                                           &mo 1        &mo 2        &kp TAB        &kp SPACE  &kp RET  &kp LEFT_GUI
             >;
         };
 
