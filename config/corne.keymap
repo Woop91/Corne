@@ -77,8 +77,8 @@
             bindings = <&mo 4>;
         };
 
-        Talt {
-            bindings = <&kp LEFT_ALT>;
+        hashtg {
+            bindings = <&kp HASH>;
             key-positions = <40 41>;
         };
 
@@ -139,7 +139,7 @@
 
         LTAB {
             bindings = <&kp TAB>;
-            key-positions = <1 2>;
+            key-positions = <>;
         };
 
         Lshift {
@@ -204,12 +204,12 @@
 
         spare {
             bindings = <&kp K_FIND2>;
-            key-positions = <22 21>;
+            key-positions = <>;
         };
 
         other {
             bindings = <&kp C_AC_FIND>;
-            key-positions = <34 33>;
+            key-positions = <>;
         };
 
         maximize {
