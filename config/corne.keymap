@@ -4,11 +4,14 @@
  * SPDX-License-Identifier: MIT
  */
 //-------------------------------------------------------INCLUDE AREA-----------------------------------------------------------------------------------------------
+
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -275,10 +278,10 @@
 
         mouse {
             bindings = <
-&rgb_ug RGB_TOG  &bl BL_TOG       &trans          &msc SCRL_UP    &trans           &trans    &none     &trans          &mmv MOVE_UP    &trans           &trans  &soft_off
-&rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &bootloader
-&rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &trans          &trans          &trans           &trans    &mkp MB1  &mkp LCLK       &mkp MB2        &mkp RCLK        &trans  &sys_reset
-                                                  &trans          &trans           &trans    &mkp MB1  &trans          &trans
+&rgb_ug RGB_TOG  &bl BL_TOG       &trans          &msc SCRL_UP    &trans           &trans    &none      &trans          &mmv MOVE_UP    &trans           &trans  &soft_off
+&rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &bootloader
+&rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &trans          &trans          &trans           &trans    &none      &none           &none           &none            &trans  &sys_reset
+                                                  &trans          &trans           &trans    &mkp LCLK  &mkp RCLK       &trans
             >;
         };
 
