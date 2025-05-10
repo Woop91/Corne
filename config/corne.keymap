@@ -274,7 +274,7 @@
             bindings = <
 &tp LA(TAB) TAB  &kp PG_UP    &kp C_AC_BACK  &kp UP          &kp C_AC_FORWARD  &kp C_BRI_DN       &kp C_BRI_UP  &kp C_PREV    &trans      &kp C_NEXT    &kp PRINTSCREEN  &trans
 &tp LSHFT CAPS   &kp PG_DN    &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PRINTSCREEN    &trans        &kp C_RW      &kp C_PP    &kp C_FF      &kp LEFT         &kp RIGHT
-&kp LCTRL        &tp LC(Y) Z  &tp LC(Z) X    &tp LC(X) C     &tp LC(C) D       &tp LC(V) V        &trans        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &trans           &trans
+&kp LCTRL        &tp LC(Y) Z  &tp LC(Z) X    &tp LC(X) C     &tp LC(C) D       &tp LC(V) V        &kp RGUI      &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &trans           &trans
                                              &mo 1           &mo 2             &kp ESC            &kp SPACE     &kp RET       &kp LGUI
             >;
         };
