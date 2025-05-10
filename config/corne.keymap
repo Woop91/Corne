@@ -206,11 +206,5 @@
                                           &mo 1         &mo 2         &kp ESC       &kp SPACE  &tp LALT RET  &kp LGUI
             >;
         };
-
-        extra_1 { status = "reserved"; };
-
-        extra_2 { status = "reserved"; };
-
-        extra_3 { status = "reserved"; };
     };
 };
