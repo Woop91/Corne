@@ -8,7 +8,9 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 //-------------------------------------------------------COMBO-1-----------------------------------------------------------------------------------------------
@@ -279,10 +281,10 @@
 
         mouse {
             bindings = <
-&none  &none  &trans          &msc SCRL_UP    &trans           &trans    &none      &trans          &mmv MOVE_UP    &trans           &trans  &soft_off
-&none  &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &bootloader
-&none  &none  &trans          &trans          &trans           &trans    &none      &none           &none           &none            &trans  &sys_reset
-                              &trans          &trans           &trans    &mkp LCLK  &mkp RCLK       &trans
+&caps_word         &key_repeat   &trans          &msc SCRL_UP    &trans           &trans    &none      &trans          &mmv MOVE_UP    &trans           &trans  &bootloader
+&ext_power EP_ON   &out OUT_USB  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &sys_reset
+&ext_power EP_OFF  &out OUT_BLE  &trans          &trans          &trans           &trans    &none      &none           &none           &none            &trans  &none
+                                                 &trans          &trans           &trans    &mkp LCLK  &mkp RCLK       &trans
             >;
         };
 
