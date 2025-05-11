@@ -311,10 +311,10 @@
             // 			              |  RSE| LWR  | ESC |                  | SPC | ALTE/NT | GUI |
 
             bindings = <
-&kp F1  &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &bt BT_CLR  &trans       &trans     &out OUT_BLE  &caps_word         &key_repeat
-&kp F7  &kp F8        &kp F9        &kp F10       &kp F11       &kp F12         &mkp LCLK   &mkp MB2     &none      &out OUT_USB  &ext_power EP_ON   &kt B
-&none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &sys_reset  &bootloader  &soft_off  &none         &ext_power EP_OFF  &tog 2
-                                    &mo 1         &mo 2         &kp ESC         &kp SPACE   &kp RETURN   &kp LGUI
+&kp F1  &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &bt BT_CLR  &trans       &trans      &none         &none              &key_repeat
+&kp F7  &kp F8        &kp F9        &kp F10       &kp F11       &kp F12         &mkp LCLK   &mkp MB2     &none       &out OUT_BLE  &ext_power EP_ON   &kt B
+&none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &sys_reset  &bootloader  &soft_off   &out OUT_USB  &ext_power EP_OFF  &tog 2
+                                    &mo 1         &mo 2         &kp ESC         &kp SPACE   &kp RETURN   &caps_word
             >;
         };
 
