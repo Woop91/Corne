@@ -284,7 +284,7 @@
 &caps_word         &key_repeat   &trans          &msc SCRL_UP    &trans           &trans    &none      &trans          &mmv MOVE_UP    &trans           &trans  &bootloader
 &ext_power EP_ON   &out OUT_BLE  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &sys_reset
 &ext_power EP_OFF  &out OUT_USB  &trans          &trans          &trans           &trans    &none      &none           &none           &none            &trans  &none
-                                                 &trans          &trans           &trans    &mkp LCLK  &mkp RCLK       &trans
+                                                 &trans          &trans           &trans    &mkp LCLK  &mkp RCLK       &kp B
             >;
         };
 
