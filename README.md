@@ -6,6 +6,21 @@ The keymap and Keymap Editor layout are preserved from the last successful
 `5keys` build (`c39cc1a97939837799f0c55b44cdab1bba6e49f8`). The keymap has
 42 positions; the historical branch name does not select a 36-key layout.
 
+Two physical keyboard sets are supported. Keep their firmware files separate:
+
+| Set | Left firmware | Right firmware |
+| --- | --- | --- |
+| First: left nice!view, no right display | `corne-left-niceview.uf2` | `corne-right.uf2` |
+| Second: standard four-pin SSD1306 OLEDs on both halves | `corne-left-oled.uf2` | `corne-right-oled.uf2` |
+
+The OLED builds use the standard Corne I2C display wiring and 128x32 geometry.
+The left OLED shows both battery percentages, active Bluetooth profile label,
+output/connection state, and layer. The right shows its battery and split link
+state. `+` beside a percentage means USB power is present. As on the nice!view,
+an unknown right battery displays `--`; disconnecting retains the last reading.
+Both sets use the same keymap and profile names. USB Studio editing is enabled
+on each set's left half. The OLED builds do not include the nice!view driver.
+
 ## Build and flash
 
 1. Open **Actions → Build Corne firmware**, select the branch, and run the
