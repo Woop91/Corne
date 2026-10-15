@@ -13,22 +13,22 @@ if CORNE_BATTERY_DISPLAY
 
 config CORNE_BT_PROFILE_1_LABEL
     string "Bluetooth profile 1 device label"
-    default "LNV"
+    default "WST"
 
 config CORNE_BT_PROFILE_2_LABEL
     string "Bluetooth profile 2 device label"
-    default "MBP"
+    default "LNV"
 
 config CORNE_BT_PROFILE_3_LABEL
     string "Bluetooth profile 3 device label"
-    default "DGX"
+    default "MBP"
 
 config CORNE_BT_PROFILE_4_LABEL
     string "Bluetooth profile 4 device label"
-    default "IPD"
+    default "DGX"
 
 config CORNE_BT_PROFILE_5_LABEL
     string "Bluetooth profile 5 device label"
-    default ""
+    default "IPD"
 
 endif

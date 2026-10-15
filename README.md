@@ -56,8 +56,8 @@ its original license is retained in `src/LICENSE.zmk`. Shared rendering helpers
 come from the same pinned ZMK checkout. `CONFIG_CORNE_BATTERY_DISPLAY` enables
 right-half battery fetching and replaces the stock widget, without enabling WPM.
 
-The configured labels are **1 = LNV (Lenovo), 2 = MBP (MacBook),
-3 = DGX (DGX Spark), 4 = IPD (iPad)**. Profile 5 is unnamed. These labels describe
+The configured labels are **1 = WST (this workstation), 2 = LNV (Lenovo),
+3 = MBP (MacBook), 4 = DGX (DGX Spark), 5 = IPD (iPad)**. These labels describe
 the existing profile slots; they do not re-pair devices or change slot assignments.
 
 ZMK does not automatically learn a paired computer or phone's friendly name.
