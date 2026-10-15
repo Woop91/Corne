@@ -1,0 +1,10 @@
+config CORNE_BATTERY_DISPLAY
+    bool "Show both Corne batteries on the left nice!view"
+    depends on ZMK_DISPLAY && ZMK_SPLIT_ROLE_CENTRAL
+    select ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_18
+    select LV_FONT_MONTSERRAT_14
+    select LV_FONT_UNSCII_8
+    select LV_USE_IMG
+    select LV_USE_CANVAS
