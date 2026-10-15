@@ -82,7 +82,7 @@ static void render_status(struct k_work *work) {
         snprintf(top, sizeof(top), "L%u%%%s R--", (unsigned)state.local_battery,
                  state.usb_powered ? "+" : "");
     }
-    snprintf(middle, sizeof(middle), "BT%u %.11s", (unsigned)state.profile + 1, state.profile_name);
+    snprintf(middle, sizeof(middle), "BT%u %.10s", (unsigned)state.profile + 1, state.profile_name);
     snprintf(bottom, sizeof(bottom), "%s %s L%u", state.usb_output ? "USB" : "BLE",
              !state.profile_bonded ? "NEW" : (state.profile_connected ? "ON" : "OFF"),
              (unsigned)state.layer);

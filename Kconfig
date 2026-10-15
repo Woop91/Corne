@@ -12,7 +12,7 @@ config CORNE_BATTERY_DISPLAY
 config CORNE_OLED_DISPLAY
     bool "Use the standard Corne 128x32 OLED status display"
     depends on ZMK_DISPLAY
-    select LV_OBJ_LABEL
+    select LV_USE_LABEL
     select LV_FONT_UNSCII_8
     select ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING if ZMK_SPLIT_ROLE_CENTRAL
 
