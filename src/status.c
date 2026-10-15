@@ -229,14 +229,15 @@ static struct output_status_state output_status_get_state(const zmk_event_t *_eh
         CONFIG_CORNE_BT_PROFILE_3_LABEL, CONFIG_CORNE_BT_PROFILE_4_LABEL,
         CONFIG_CORNE_BT_PROFILE_5_LABEL,
     };
-    const char *name = zmk_ble_active_profile_name();
-    if (name == NULL || name[0] == '\0') {
-        name = state.active_profile_index >= 0 && state.active_profile_index < NICEVIEW_PROFILE_COUNT
-                   ? labels[state.active_profile_index] : "";
+    const char *name = state.active_profile_index >= 0 &&
+                               state.active_profile_index < NICEVIEW_PROFILE_COUNT
+                           ? labels[state.active_profile_index] : "";
+    if (name[0] == '\0') {
+        name = zmk_ble_active_profile_name();
     }
     // Do not confuse the keyboard's advertised name with the paired host's name.
     snprintf(state.profile_name, sizeof(state.profile_name), "%.15s",
-             name[0] != '\0' ? name : "Unnamed");
+             name != NULL && name[0] != '\0' ? name : "Unnamed");
     return state;
 }
 

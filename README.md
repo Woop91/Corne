@@ -61,17 +61,12 @@ The configured labels are **1 = LNV (Lenovo), 2 = MBP (MacBook),
 the existing profile slots; they do not re-pair devices or change slot assignments.
 
 ZMK does not automatically learn a paired computer or phone's friendly name.
-If the active profile already has a stored name, it is used. Otherwise set the
-matching `CONFIG_CORNE_BT_PROFILE_1_LABEL` through
-`CONFIG_CORNE_BT_PROFILE_5_LABEL` string in `config/corne.conf`; for example:
-
-```conf
-CONFIG_CORNE_BT_PROFILE_1_LABEL="Work PC"
-CONFIG_CORNE_BT_PROFILE_2_LABEL="Phone"
-```
-
-Empty labels display `Unnamed`; the display uses the first 15 characters over
-two lines. Profile labels use one-based numbering, matching the display.
+Edit the matching `CORNE_BT_PROFILE_1_LABEL` through
+`CORNE_BT_PROFILE_5_LABEL` default string in `Kconfig` to change these labels.
+Configured labels take precedence over any stored profile name. If a label is
+empty, a stored name is used when available; otherwise the display says
+`Unnamed`. The first 15 characters fit over two lines. Label numbers are
+one-based, matching the display.
 
 Keep the ZMK revision in `config/west.yml` and the reusable workflow version
 in `.github/workflows/build.yml` aligned when upgrading.
