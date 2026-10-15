@@ -45,7 +45,10 @@ that its chip-select wiring matches the standard nice!view adapter.
 The custom left display shows the left battery (**L**) with the most recently
 reported right battery (**R**) directly below it, replacing the WPM graph.
 The right row shows `--` until the right half reports a level; a real 0% reading
-is shown as `0%`. The USB/Bluetooth indicator and active layer remain. The middle
+while connected is shown as `0%`. Disconnecting the right half keeps its last
+reading rather than interpreting ZMK's disconnect notification as a flat battery.
+The left battery shows a bolt while USB-powered. The USB/Bluetooth indicator
+and active layer remain. The middle
 shows the active Bluetooth slot as **BT 1** through **BT 5**, its device label,
 and whether that slot is online, offline, or unpaired.
 Only the left firmware needs updating for this display change. The right half

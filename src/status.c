@@ -6,6 +6,7 @@
  */
 
 #include <zephyr/kernel.h>
+#include <zephyr/bluetooth/conn.h>
 
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
@@ -25,6 +26,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/keymap.h>
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
+LV_IMG_DECLARE(bolt);
 
 struct output_status_state {
     struct zmk_endpoint_instance selected_endpoint;
@@ -43,7 +45,7 @@ struct layer_status_state {
 
 // Battery rows occupy the space formerly used by the WPM graph.
 static void draw_battery_row(lv_obj_t *canvas, int y, const char *side,
-                             uint8_t level, bool known) {
+                             uint8_t level, bool known, bool charging) {
     lv_draw_label_dsc_t label;
     init_label_dsc(&label, LVGL_FOREGROUND, &lv_font_unscii_8, LV_TEXT_ALIGN_LEFT);
     lv_draw_rect_dsc_t foreground, background;
@@ -57,6 +59,11 @@ static void draw_battery_row(lv_obj_t *canvas, int y, const char *side,
     if (known && level > 0) {
         lv_canvas_draw_rect(canvas, 12, y + 2, MAX(1, MIN(level, 100) * 16 / 100),
                             8, &foreground);
+    }
+    if (charging) {
+        lv_draw_img_dsc_t image;
+        lv_draw_img_dsc_init(&image);
+        lv_canvas_draw_img(canvas, 15, y - 2, &bolt, &image);
     }
     char percentage[5];
     if (known) {
@@ -74,8 +81,8 @@ static void draw_top(struct zmk_widget_status *widget) {
     init_rect_dsc(&background, LVGL_BACKGROUND);
     lv_canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &background);
 
-    draw_battery_row(canvas, 2, "L", state->battery, true);
-    draw_battery_row(canvas, 24, "R", widget->right_battery, widget->right_battery_known);
+    draw_battery_row(canvas, 2, "L", state->battery, true, state->charging);
+    draw_battery_row(canvas, 24, "R", widget->right_battery, widget->right_battery_known, false);
 
     // Keep the selected USB/Bluetooth endpoint below both battery rows.
     lv_draw_label_dsc_t label;
@@ -299,11 +306,33 @@ static void right_battery_update(struct k_work *work) {
 }
 K_WORK_DEFINE(right_battery_work, right_battery_update);
 
+static void find_connected_peripheral(struct bt_conn *conn, void *user_data) {
+    struct bt_conn_info info;
+    // The left Corne is central to its one right-hand peripheral, and a
+    // peripheral to computers/phones. A host connection cannot satisfy this.
+    if (bt_conn_get_info(conn, &info) == 0 && info.role == BT_CONN_ROLE_CENTRAL &&
+        info.state == BT_CONN_STATE_CONNECTED) {
+        *(bool *)user_data = true;
+    }
+}
+
+static bool right_half_connected(void) {
+    bool connected = false;
+    bt_conn_foreach(BT_CONN_TYPE_LE, find_connected_peripheral, &connected);
+    return connected;
+}
+
 static int right_battery_listener(const zmk_event_t *eh) {
     const struct zmk_peripheral_battery_state_changed *ev =
         as_zmk_peripheral_battery_state_changed(eh);
     // This Corne has one peripheral: the right half occupies source 0.
     if (ev == NULL || ev->source != 0) {
+        return ZMK_EV_EVENT_BUBBLE;
+    }
+    // ZMK v0.3.0 emits a synthetic 0% on disconnect. Check the controller's
+    // connection state rather than the split slot, which is cleared afterward.
+    // A genuine 0% report from a connected right half remains valid.
+    if (ev->state_of_charge == 0 && !right_half_connected()) {
         return ZMK_EV_EVENT_BUBBLE;
     }
     k_mutex_lock(&right_battery_mutex, K_FOREVER);
