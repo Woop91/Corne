@@ -9,3 +9,7 @@ if(CONFIG_CORNE_BATTERY_DISPLAY)
     ${nice_view_widgets}/bolt.c
   )
 endif()
+
+if(CONFIG_CORNE_OLED_DISPLAY)
+  target_sources(app PRIVATE ${CMAKE_CURRENT_LIST_DIR}/src/oled_status.c)
+endif()

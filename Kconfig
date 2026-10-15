@@ -9,7 +9,14 @@ config CORNE_BATTERY_DISPLAY
     select LV_USE_IMG
     select LV_USE_CANVAS
 
-if CORNE_BATTERY_DISPLAY
+config CORNE_OLED_DISPLAY
+    bool "Use the Corne I2C OLED status display"
+    depends on ZMK_DISPLAY
+    select LV_USE_LABEL
+    select LV_FONT_UNSCII_8
+    select ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING if ZMK_SPLIT_ROLE_CENTRAL
+
+if CORNE_BATTERY_DISPLAY || CORNE_OLED_DISPLAY
 
 config CORNE_BT_PROFILE_1_LABEL
     string "Bluetooth profile 1 device label"

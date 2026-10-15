@@ -1,0 +1,6 @@
+/* Compact 64x32 SSD1306-compatible panel; validate on the physical display. */
+&oled {
+    width = <64>;
+    height = <32>;
+    segment-offset = <32>;
+};
