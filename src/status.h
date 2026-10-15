@@ -20,6 +20,7 @@ struct zmk_widget_status {
     struct status_state state;
     uint8_t right_battery;
     bool right_battery_known;
+    char profile_name[32];
 };
 
 int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent);

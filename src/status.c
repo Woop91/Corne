@@ -33,6 +33,7 @@ struct output_status_state {
     bool active_profile_bonded;
     bool profiles_connected[NICEVIEW_PROFILE_COUNT];
     bool profiles_bonded[NICEVIEW_PROFILE_COUNT];
+    char profile_name[32];
 };
 
 struct layer_status_state {
@@ -94,58 +95,40 @@ static void draw_top(struct zmk_widget_status *widget) {
     rotate_canvas(canvas, widget->cbuf);
 }
 
-static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
-    lv_obj_t *canvas = lv_obj_get_child(widget, 1);
+static void draw_middle(struct zmk_widget_status *widget) {
+    lv_obj_t *canvas = lv_obj_get_child(widget->obj, 1);
+    const struct status_state *state = &widget->state;
 
     lv_draw_rect_dsc_t rect_black_dsc;
     init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
-    lv_draw_rect_dsc_t rect_white_dsc;
-    init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
-    lv_draw_arc_dsc_t arc_dsc;
-    init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, 2);
-    lv_draw_arc_dsc_t arc_dsc_filled;
-    init_arc_dsc(&arc_dsc_filled, LVGL_FOREGROUND, 9);
     lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
-    lv_draw_label_dsc_t label_dsc_black;
-    init_label_dsc(&label_dsc_black, LVGL_BACKGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
+    lv_draw_label_dsc_t small_label;
+    init_label_dsc(&small_label, LVGL_FOREGROUND, &lv_font_unscii_8, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
     lv_canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &rect_black_dsc);
 
-    // Draw circles
-    int circle_offsets[NICEVIEW_PROFILE_COUNT][2] = {
-        {13, 13}, {55, 13}, {34, 34}, {13, 55}, {55, 55},
-    };
+    char profile[12];
+    snprintf(profile, sizeof(profile), "BT %u", (unsigned)state->active_profile_index + 1);
+    lv_canvas_draw_text(canvas, 0, 0, 68, &label_dsc, profile);
 
-    for (int i = 0; i < NICEVIEW_PROFILE_COUNT; i++) {
-        bool selected = i == state->active_profile_index;
-
-        if (state->profiles_connected[i]) {
-            lv_canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13, 0, 360,
-                               &arc_dsc);
-        } else if (state->profiles_bonded[i]) {
-            const int segments = 8;
-            const int gap = 20;
-            for (int j = 0; j < segments; ++j)
-                lv_canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13,
-                                   360. / segments * j + gap / 2.0,
-                                   360. / segments * (j + 1) - gap / 2.0, &arc_dsc);
-        }
-
-        if (selected) {
-            lv_canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 9, 0, 359,
-                               &arc_dsc_filled);
-        }
-
-        char label[2];
-        snprintf(label, sizeof(label), "%d", i + 1);
-        lv_canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
-                            (selected ? &label_dsc_black : &label_dsc), label);
+    // At eight pixels per character, two explicit lines fit the 68-pixel width.
+    char name_line[9];
+    for (int line = 0; line < 2; ++line) {
+        size_t offset = line * 8;
+        size_t length = strlen(widget->profile_name);
+        snprintf(name_line, sizeof(name_line), "%.8s",
+                 offset < length ? widget->profile_name + offset : "");
+        lv_canvas_draw_text(canvas, 2, 22 + line * 10, 64, &small_label, name_line);
     }
+    const char *connection = !state->active_profile_bonded
+                                 ? "UNPAIRED"
+                                 : (state->active_profile_connected ? "ONLINE" : "OFFLINE");
+    lv_canvas_draw_text(canvas, 2, 50, 64, &small_label, connection);
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf);
+    rotate_canvas(canvas, widget->cbuf2);
 }
 
 static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
@@ -215,13 +198,14 @@ static void set_output_status(struct zmk_widget_status *widget,
     widget->state.active_profile_index = state->active_profile_index;
     widget->state.active_profile_connected = state->active_profile_connected;
     widget->state.active_profile_bonded = state->active_profile_bonded;
+    memcpy(widget->profile_name, state->profile_name, sizeof(widget->profile_name));
     for (int i = 0; i < NICEVIEW_PROFILE_COUNT; ++i) {
         widget->state.profiles_connected[i] = state->profiles_connected[i];
         widget->state.profiles_bonded[i] = state->profiles_bonded[i];
     }
 
     draw_top(widget);
-    draw_middle(widget->obj, widget->cbuf2, &widget->state);
+    draw_middle(widget);
 }
 
 static void output_status_update_cb(struct output_status_state state) {
@@ -240,6 +224,19 @@ static struct output_status_state output_status_get_state(const zmk_event_t *_eh
         state.profiles_connected[i] = zmk_ble_profile_is_connected(i);
         state.profiles_bonded[i] = !zmk_ble_profile_is_open(i);
     }
+    static const char *const labels[NICEVIEW_PROFILE_COUNT] = {
+        CONFIG_CORNE_BT_PROFILE_1_LABEL, CONFIG_CORNE_BT_PROFILE_2_LABEL,
+        CONFIG_CORNE_BT_PROFILE_3_LABEL, CONFIG_CORNE_BT_PROFILE_4_LABEL,
+        CONFIG_CORNE_BT_PROFILE_5_LABEL,
+    };
+    const char *name = zmk_ble_active_profile_name();
+    if (name == NULL || name[0] == '\0') {
+        name = state.active_profile_index >= 0 && state.active_profile_index < NICEVIEW_PROFILE_COUNT
+                   ? labels[state.active_profile_index] : "";
+    }
+    // Do not confuse the keyboard's advertised name with the paired host's name.
+    snprintf(state.profile_name, sizeof(state.profile_name), "%.15s",
+             name[0] != '\0' ? name : "Unnamed");
     return state;
 }
 

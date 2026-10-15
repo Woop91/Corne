@@ -45,7 +45,9 @@ that its chip-select wiring matches the standard nice!view adapter.
 The custom left display shows the left battery (**L**) with the most recently
 reported right battery (**R**) directly below it, replacing the WPM graph.
 The right row shows `--` until the right half reports a level; a real 0% reading
-is shown as `0%`. The USB/Bluetooth indicator, profiles, and active layer remain.
+is shown as `0%`. The USB/Bluetooth indicator and active layer remain. The middle
+shows the active Bluetooth slot as **BT 1** through **BT 5**, its device label,
+and whether that slot is online, offline, or unpaired.
 Only the left firmware needs updating for this display change. The right half
 must be powered on and connected wirelessly for its battery reports to arrive.
 
@@ -53,6 +55,19 @@ The widget in `src/status.c` is adapted from ZMK v0.3.0's nice!view widget;
 its original license is retained in `src/LICENSE.zmk`. Shared rendering helpers
 come from the same pinned ZMK checkout. `CONFIG_CORNE_BATTERY_DISPLAY` enables
 right-half battery fetching and replaces the stock widget, without enabling WPM.
+
+ZMK does not automatically learn a paired computer or phone's friendly name.
+If the active profile already has a stored name, it is used. Otherwise set the
+matching `CONFIG_CORNE_BT_PROFILE_1_LABEL` through
+`CONFIG_CORNE_BT_PROFILE_5_LABEL` string in `config/corne.conf`; for example:
+
+```conf
+CONFIG_CORNE_BT_PROFILE_1_LABEL="Work PC"
+CONFIG_CORNE_BT_PROFILE_2_LABEL="Phone"
+```
+
+Empty labels display `Unnamed`; the display uses the first 15 characters over
+two lines. Profile labels use one-based numbering, matching the display.
 
 Keep the ZMK revision in `config/west.yml` and the reusable workflow version
 in `.github/workflows/build.yml` aligned when upgrading.
