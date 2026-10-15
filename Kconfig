@@ -10,7 +10,7 @@ config CORNE_BATTERY_DISPLAY
     select LV_USE_CANVAS
 
 config CORNE_OLED_DISPLAY
-    bool "Use the standard Corne 128x32 OLED status display"
+    bool "Use the Corne I2C OLED status display"
     depends on ZMK_DISPLAY
     select LV_USE_LABEL
     select LV_FONT_UNSCII_8

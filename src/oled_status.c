@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <lvgl.h>
 #include <zephyr/kernel.h>
+#include <zephyr/devicetree.h>
 #include <zephyr/sys/atomic.h>
 #include <zmk/battery.h>
 #include <zmk/display.h>
@@ -10,6 +11,8 @@
 #include <zmk/events/battery_state_changed.h>
 #include <zmk/events/usb_conn_state_changed.h>
 #include <zmk/usb.h>
+
+#define OLED_WIDTH DT_PROP(DT_CHOSEN(zephyr_display), width)
 
 #if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
 #include <zephyr/bluetooth/conn.h>
@@ -75,6 +78,17 @@ static void render_status(struct k_work *work) {
     char top[17], middle[17], bottom[17];
     k_mutex_lock(&state_mutex, K_FOREVER);
 #if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+#if OLED_WIDTH < 128
+    snprintf(top, sizeof(top), "L%u%%%s", (unsigned)state.local_battery,
+             state.usb_powered ? "+" : "");
+    if (state.right_known) {
+        snprintf(middle, sizeof(middle), "R%u%%", (unsigned)state.right_battery);
+    } else {
+        snprintf(middle, sizeof(middle), "R--");
+    }
+    snprintf(bottom, sizeof(bottom), "BT%c %.4s", '1' + MIN(state.profile, 4),
+             state.profile_name);
+#else
     if (state.right_known) {
         snprintf(top, sizeof(top), "L%u%%%s R%u%%", (unsigned)state.local_battery,
                  state.usb_powered ? "+" : "", (unsigned)state.right_battery);
@@ -86,11 +100,13 @@ static void render_status(struct k_work *work) {
     snprintf(bottom, sizeof(bottom), "%s %s L%u", state.usb_output ? "USB" : "BLE",
              !state.profile_bonded ? "NEW" : (state.profile_connected ? "ON" : "OFF"),
              (unsigned)state.layer);
+#endif
 #else
     snprintf(top, sizeof(top), "R%u%%%s", (unsigned)state.local_battery,
              state.usb_powered ? "+" : "");
     snprintf(middle, sizeof(middle), "%s", state.linked ? "LINKED" : "NO LINK");
-    snprintf(bottom, sizeof(bottom), "%s", state.usb_powered ? "USB POWER" : "BATTERY");
+    snprintf(bottom, sizeof(bottom), "%s",
+             state.usb_powered ? (OLED_WIDTH < 128 ? "USB" : "USB POWER") : "BATTERY");
 #endif
     k_mutex_unlock(&state_mutex);
     lv_label_set_text(rows[0], top);
@@ -163,7 +179,7 @@ lv_obj_t *zmk_display_status_screen(void) {
     lv_obj_set_style_pad_all(screen, 0, LV_PART_MAIN);
     for (int i = 0; i < 3; ++i) {
         rows[i] = lv_label_create(screen);
-        lv_obj_set_width(rows[i], 128);
+        lv_obj_set_width(rows[i], OLED_WIDTH);
         lv_label_set_long_mode(rows[i], LV_LABEL_LONG_CLIP);
         lv_obj_set_pos(rows[i], 0, i * 11);
     }

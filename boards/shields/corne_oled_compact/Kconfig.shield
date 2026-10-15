@@ -1,0 +1,2 @@
+config SHIELD_CORNE_OLED_COMPACT
+    def_bool $(shields_list_contains,corne_oled_compact)

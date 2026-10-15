@@ -13,13 +13,17 @@ Two physical keyboard sets are supported. Keep their firmware files separate:
 | First: left nice!view, no right display | `corne-left-niceview.uf2` | `corne-right.uf2` |
 | Second: standard four-pin SSD1306 OLEDs on both halves | `corne-left-oled.uf2` | `corne-right-oled.uf2` |
 
-The OLED builds use the standard Corne I2C display wiring and 128x32 geometry.
-The left OLED shows both battery percentages, active Bluetooth profile label,
-output/connection state, and layer. The right shows its battery and split link
+The OLED builds use standard Corne I2C display wiring. For the reported
+half-inch displays, `corne_oled_compact` selects a 64x32 panel with a 32-column
+offset. This geometry is a hardware assumption to verify on the actual panels.
+The compact left OLED shows the left battery, right battery, and active
+Bluetooth profile on separate rows. The right shows its battery and split link
 state. `+` beside a percentage means USB power is present. As on the nice!view,
 an unknown right battery displays `--`; disconnecting retains the last reading.
 Both sets use the same keymap and profile names. USB Studio editing is enabled
 on each set's left half. The OLED builds do not include the nice!view driver.
+For a confirmed 128x32 OLED, omit `corne_oled_compact` from that target's shield
+list; the wider layout also shows output/connection state and active layer.
 
 ## Build and flash
 
