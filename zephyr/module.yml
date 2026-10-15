@@ -1,0 +1,4 @@
+name: corne_battery_display
+build:
+  cmake: .
+  kconfig: Kconfig

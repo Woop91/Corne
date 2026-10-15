@@ -1,0 +1,34 @@
+config CORNE_BATTERY_DISPLAY
+    bool "Show both Corne batteries on the left nice!view"
+    depends on ZMK_DISPLAY && ZMK_SPLIT_ROLE_CENTRAL
+    select ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_18
+    select LV_FONT_MONTSERRAT_14
+    select LV_FONT_UNSCII_8
+    select LV_USE_IMG
+    select LV_USE_CANVAS
+
+if CORNE_BATTERY_DISPLAY
+
+config CORNE_BT_PROFILE_1_LABEL
+    string "Bluetooth profile 1 device label"
+    default "WST"
+
+config CORNE_BT_PROFILE_2_LABEL
+    string "Bluetooth profile 2 device label"
+    default "LNV"
+
+config CORNE_BT_PROFILE_3_LABEL
+    string "Bluetooth profile 3 device label"
+    default "MBP"
+
+config CORNE_BT_PROFILE_4_LABEL
+    string "Bluetooth profile 4 device label"
+    default "DGX"
+
+config CORNE_BT_PROFILE_5_LABEL
+    string "Bluetooth profile 5 device label"
+    default "IPD"
+
+endif
